@@ -1,0 +1,3429 @@
+{
+  "nextTrackingNumber": 21,
+  "defaultLanguage": "en-US",
+  "initialSequence": "595a453f-3423-4239-bd28-a679e4f4f156",
+  "name": "Lead created from Live Chat - Converted Opportunity",
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": [],
+    "dataTableTables": [
+      {
+        "id": "806a6f2b-8e66-4216-9ba4-dea824060b04",
+        "name": "Australia Chatbot",
+        "schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Australia Chatbot",
+          "type": "object",
+          "required": [
+            "key"
+          ],
+          "properties": {
+            "key": {
+              "title": "ConversationID",
+              "type": "string",
+              "$id": "/properties/key",
+              "displayOrder": 0,
+              "maxLength": 256,
+              "minLength": 1,
+              "name": "key",
+              "required": true
+            },
+            "FirstName": {
+              "title": "FirstName",
+              "type": "string",
+              "$id": "/properties/FirstName",
+              "displayOrder": 1,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "FirstName",
+              "required": false
+            },
+            "Phone": {
+              "title": "Phone",
+              "type": "string",
+              "$id": "/properties/Phone",
+              "displayOrder": 2,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "Phone",
+              "required": false
+            },
+            "BusinessName": {
+              "title": "BusinessName",
+              "type": "string",
+              "$id": "/properties/BusinessName",
+              "displayOrder": 3,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "BusinessName",
+              "required": false
+            },
+            "Email": {
+              "title": "Email",
+              "type": "string",
+              "$id": "/properties/Email",
+              "displayOrder": 4,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "Email",
+              "required": false
+            },
+            "LeadID": {
+              "title": "LeadID",
+              "type": "string",
+              "$id": "/properties/LeadID",
+              "displayOrder": 5,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "LeadID",
+              "required": false
+            },
+            "Outcome": {
+              "title": "Outcome",
+              "type": "string",
+              "$id": "/properties/Outcome",
+              "displayOrder": 6,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "Outcome",
+              "required": false
+            },
+            "Date": {
+              "title": "Date",
+              "type": "string",
+              "$id": "/properties/Date",
+              "displayOrder": 7,
+              "maxLength": 262144,
+              "minLength": 0,
+              "name": "Date",
+              "required": false
+            },
+            "LandingPage": {
+              "title": "LandingPage",
+              "type": "string",
+              "$id": "/properties/LandingPage",
+              "displayOrder": 8,
+              "minLength": 0,
+              "maxLength": 262144,
+              "name": "LandingPage",
+              "required": false
+            }
+          },
+          "additionalProperties": false,
+          "datatableId": "806a6f2b-8e66-4216-9ba4-dea824060b04"
+        },
+        "result": "ok"
+      }
+    ],
+    "actionServiceActions": [
+      {
+        "id": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+        "name": "Insert Data Table Row - Outbound dialler",
+        "category": "Genesys Cloud Data Actions",
+        "contract": {
+          "input": {
+            "inputSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "A Row update",
+                "type": "object",
+                "required": [
+                  "Key"
+                ],
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": true
+                  },
+                  "LeadID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  },
+                  "ContactNumber": {
+                    "type": "string",
+                    "name": "ContactNumber",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "output": {
+            "errorSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "ErrorBody",
+                "description": "Detailed information about an error response.",
+                "type": "object",
+                "required": [
+                  "errorCode",
+                  "status",
+                  "userMessage"
+                ],
+                "properties": {
+                  "errors": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "name": "errors",
+                    "required": false
+                  },
+                  "errorCode": {
+                    "description": "A code unique to this error.",
+                    "type": "string",
+                    "name": "errorCode",
+                    "required": false
+                  },
+                  "status": {
+                    "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                    "type": "integer",
+                    "name": "status",
+                    "required": false
+                  },
+                  "correlationId": {
+                    "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                    "type": "string",
+                    "name": "correlationId",
+                    "required": false
+                  },
+                  "entityId": {
+                    "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityId",
+                    "required": false
+                  },
+                  "entityName": {
+                    "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityName",
+                    "required": false
+                  },
+                  "userMessage": {
+                    "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                    "type": "string",
+                    "name": "userMessage",
+                    "required": false
+                  },
+                  "userParamsMessage": {
+                    "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                    "type": "string",
+                    "name": "userParamsMessage",
+                    "required": false
+                  },
+                  "userParams.key": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Key name of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.key",
+                    "required": false
+                  },
+                  "userParams.value": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Value of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.value",
+                    "required": false
+                  },
+                  "details.errorCode": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.errorCode",
+                    "required": false
+                  },
+                  "details.fieldName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.fieldName",
+                    "required": false
+                  },
+                  "details.entityId": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityId",
+                    "required": false
+                  },
+                  "details.entityName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityName",
+                    "required": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "successSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "returns the new row",
+                "type": "object",
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": false
+                  },
+                  "LeadID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  },
+                  "ContactNumber": {
+                    "type": "string",
+                    "name": "ContactNumber",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "result": "ok",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Row update",
+          "description": "A Row update",
+          "type": "object",
+          "required": [
+            "Key"
+          ],
+          "properties": {
+            "Key": {
+              "description": "Tarjeta",
+              "type": "string",
+              "name": "Key",
+              "required": true
+            },
+            "LeadID": {
+              "description": "Telefono origen",
+              "type": "string",
+              "name": "LeadID",
+              "required": false
+            },
+            "ContactNumber": {
+              "type": "string",
+              "name": "ContactNumber",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "successSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Row update",
+          "description": "returns the new row",
+          "type": "object",
+          "properties": {
+            "Key": {
+              "description": "Tarjeta",
+              "type": "string",
+              "name": "Key",
+              "required": false
+            },
+            "LeadID": {
+              "description": "Telefono origen",
+              "type": "string",
+              "name": "LeadID",
+              "required": false
+            },
+            "ContactNumber": {
+              "type": "string",
+              "name": "ContactNumber",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "errorSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "ErrorBody",
+          "description": "Detailed information about an error response.",
+          "type": "object",
+          "required": [
+            "errorCode",
+            "status",
+            "userMessage"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "name": "errors",
+              "required": false
+            },
+            "errorCode": {
+              "description": "A code unique to this error.",
+              "type": "string",
+              "name": "errorCode",
+              "required": false
+            },
+            "status": {
+              "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+              "type": "integer",
+              "name": "status",
+              "required": false
+            },
+            "correlationId": {
+              "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+              "type": "string",
+              "name": "correlationId",
+              "required": false
+            },
+            "entityId": {
+              "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityId",
+              "required": false
+            },
+            "entityName": {
+              "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityName",
+              "required": false
+            },
+            "userMessage": {
+              "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+              "type": "string",
+              "name": "userMessage",
+              "required": false
+            },
+            "userParamsMessage": {
+              "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+              "type": "string",
+              "name": "userParamsMessage",
+              "required": false
+            },
+            "userParams.key": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Key name of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.key",
+              "required": false
+            },
+            "userParams.value": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Value of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.value",
+              "required": false
+            },
+            "details.errorCode": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.errorCode",
+              "required": false
+            },
+            "details.fieldName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.fieldName",
+              "required": false
+            },
+            "details.entityId": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityId",
+              "required": false
+            },
+            "details.entityName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityName",
+              "required": false
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ],
+    "commonModuleFlows": [
+      {
+        "type": "commonmodule",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "Flow input schema",
+          "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "title": "Flow output schema",
+          "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "name": "Trigger Flow outcome for lead with opp",
+        "id": "64177876-38d4-496f-8b09-18368412407f",
+        "result": "ok",
+        "alternateFlowInfos": [
+          {
+            "type": "commonmodule",
+            "inputSchema": {
+              "$schema": "http://json-schema.org/draft-07/schema#",
+              "title": "Flow input schema",
+              "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputSchema": {
+              "$schema": "http://json-schema.org/draft-07/schema#",
+              "title": "Flow output schema",
+              "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "version": "2.0",
+            "name": "Trigger Flow outcome for lead with opp",
+            "id": "64177876-38d4-496f-8b09-18368412407f",
+            "result": "ok",
+            "publishedVersion": {
+              "name": "2.0"
+            },
+            "supportedLanguages": [
+              {
+                "isDefault": true,
+                "language": "en-us"
+              }
+            ],
+            "division": {
+              "id": "afe1591f-a874-4014-a88f-8eaa10a249a9",
+              "name": "Home"
+            }
+          }
+        ],
+        "publishedVersion": {
+          "name": "2.0"
+        },
+        "supportedLanguages": [
+          {
+            "isDefault": true,
+            "language": "en-us"
+          }
+        ],
+        "division": {
+          "id": "afe1591f-a874-4014-a88f-8eaa10a249a9",
+          "name": "Home"
+        }
+      }
+    ]
+  },
+  "supportedLanguages": [
+    "en-US"
+  ],
+  "manifest": {
+    "dataTable": [
+      {
+        "name": "Australia Chatbot",
+        "id": "806a6f2b-8e66-4216-9ba4-dea824060b04",
+        "context": [
+          {
+            "actionName": "Data Table Lookup",
+            "id": "2e9b4652-656f-4769-a4b1-5903a0615e2b",
+            "name": "Data Table Lookup"
+          }
+        ]
+      }
+    ],
+    "dataAction": [
+      {
+        "name": "Insert Data Table Row - Outbound dialler",
+        "id": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+        "context": [
+          {
+            "actionName": "Call Data Action",
+            "id": "389315a6-aa8a-4eb1-a7f0-e428fd3dd973",
+            "name": "Call Data Action"
+          },
+          {
+            "actionName": "Call Data Action",
+            "id": "1fc4e17a-1c88-4e7e-8223-a5867a62cf19",
+            "name": "Call Data Action"
+          },
+          {
+            "actionName": "Call Data Action",
+            "id": "af7a4302-95a2-4488-b8e8-b2309fe88033",
+            "name": "Call Data Action"
+          },
+          {
+            "actionName": "Call Data Action",
+            "id": "1f1a2a90-e3e9-4366-b6dc-ceda493c8764",
+            "name": "Call Data Action"
+          }
+        ]
+      }
+    ],
+    "commonModuleFlow": [
+      {
+        "name": "Trigger Flow outcome for lead with opp",
+        "id": "64177876-38d4-496f-8b09-18368412407f",
+        "version": "published",
+        "context": [
+          {
+            "actionName": "Call Common Module",
+            "id": "a35b840c-03a5-4612-a7e5-b1a3b61c8b2f",
+            "name": "Call Common Module"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-US"
+      }
+    ],
+    "userPrompt": [],
+    "systemPrompt": []
+  },
+  "type": "workflow",
+  "debugSettings": {},
+  "errorHandling": {
+    "queue": {
+      "config": {
+        "emp": {
+          "pos": 1,
+          "text": "",
+          "type": "que"
+        }
+      },
+      "text": "",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "handlingType": "EndWorkflow"
+  },
+  "commonModules": [
+    {
+      "actionReferences": [
+        "a35b840c-03a5-4612-a7e5-b1a3b61c8b2f"
+      ],
+      "version": "2.0",
+      "name": "Trigger Flow outcome for lead with opp",
+      "id": "64177876-38d4-496f-8b09-18368412407f",
+      "model": {
+        "defaultLanguage": "en-US",
+        "initialSequence": "891ee3ee-b28d-4280-adc6-43b9a586285a",
+        "name": "Trigger Flow outcome for lead with opp",
+        "nextTrackingNumber": 13,
+        "uiMetaData": {
+          "bridgeServerActions": [],
+          "screenPops": [],
+          "actionServiceActions": [
+            {
+              "id": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+              "name": "Insert Data Table Row - Outbound dialler",
+              "category": "Genesys Cloud Data Actions",
+              "contract": {
+                "input": {
+                  "inputSchemaFlattened": {
+                    "schema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "title": "Row update",
+                      "description": "A Row update",
+                      "type": "object",
+                      "required": [
+                        "Key"
+                      ],
+                      "properties": {
+                        "Key": {
+                          "description": "Tarjeta",
+                          "type": "string",
+                          "name": "Key",
+                          "required": true
+                        },
+                        "LeadID": {
+                          "description": "Telefono origen",
+                          "type": "string",
+                          "name": "LeadID",
+                          "required": false
+                        },
+                        "ContactNumber": {
+                          "type": "string",
+                          "name": "ContactNumber",
+                          "required": false
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "output": {
+                  "errorSchemaFlattened": {
+                    "schema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "title": "ErrorBody",
+                      "description": "Detailed information about an error response.",
+                      "type": "object",
+                      "required": [
+                        "errorCode",
+                        "status",
+                        "userMessage"
+                      ],
+                      "properties": {
+                        "errors": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "name": "errors",
+                          "required": false
+                        },
+                        "errorCode": {
+                          "description": "A code unique to this error.",
+                          "type": "string",
+                          "name": "errorCode",
+                          "required": false
+                        },
+                        "status": {
+                          "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                          "type": "integer",
+                          "name": "status",
+                          "required": false
+                        },
+                        "correlationId": {
+                          "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                          "type": "string",
+                          "name": "correlationId",
+                          "required": false
+                        },
+                        "entityId": {
+                          "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                          "type": "string",
+                          "name": "entityId",
+                          "required": false
+                        },
+                        "entityName": {
+                          "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                          "type": "string",
+                          "name": "entityName",
+                          "required": false
+                        },
+                        "userMessage": {
+                          "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                          "type": "string",
+                          "name": "userMessage",
+                          "required": false
+                        },
+                        "userParamsMessage": {
+                          "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                          "type": "string",
+                          "name": "userParamsMessage",
+                          "required": false
+                        },
+                        "userParams.key": {
+                          "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                          "type": "array",
+                          "items": {
+                            "description": "Key name of userParam  pair.",
+                            "type": "string"
+                          },
+                          "name": "userParams.key",
+                          "required": false
+                        },
+                        "userParams.value": {
+                          "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                          "type": "array",
+                          "items": {
+                            "description": "Value of userParam  pair.",
+                            "type": "string"
+                          },
+                          "name": "userParams.value",
+                          "required": false
+                        },
+                        "details.errorCode": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "name": "details.errorCode",
+                          "required": false
+                        },
+                        "details.fieldName": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "name": "details.fieldName",
+                          "required": false
+                        },
+                        "details.entityId": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "name": "details.entityId",
+                          "required": false
+                        },
+                        "details.entityName": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "name": "details.entityName",
+                          "required": false
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "successSchemaFlattened": {
+                    "schema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "title": "Row update",
+                      "description": "returns the new row",
+                      "type": "object",
+                      "properties": {
+                        "Key": {
+                          "description": "Tarjeta",
+                          "type": "string",
+                          "name": "Key",
+                          "required": false
+                        },
+                        "LeadID": {
+                          "description": "Telefono origen",
+                          "type": "string",
+                          "name": "LeadID",
+                          "required": false
+                        },
+                        "ContactNumber": {
+                          "type": "string",
+                          "name": "ContactNumber",
+                          "required": false
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  }
+                }
+              },
+              "result": "ok",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "A Row update",
+                "type": "object",
+                "required": [
+                  "Key"
+                ],
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": true
+                  },
+                  "LeadID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  },
+                  "ContactNumber": {
+                    "type": "string",
+                    "name": "ContactNumber",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              },
+              "successSchema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "returns the new row",
+                "type": "object",
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": false
+                  },
+                  "LeadID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  },
+                  "ContactNumber": {
+                    "type": "string",
+                    "name": "ContactNumber",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              },
+              "errorSchema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "ErrorBody",
+                "description": "Detailed information about an error response.",
+                "type": "object",
+                "required": [
+                  "errorCode",
+                  "status",
+                  "userMessage"
+                ],
+                "properties": {
+                  "errors": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "name": "errors",
+                    "required": false
+                  },
+                  "errorCode": {
+                    "description": "A code unique to this error.",
+                    "type": "string",
+                    "name": "errorCode",
+                    "required": false
+                  },
+                  "status": {
+                    "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                    "type": "integer",
+                    "name": "status",
+                    "required": false
+                  },
+                  "correlationId": {
+                    "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                    "type": "string",
+                    "name": "correlationId",
+                    "required": false
+                  },
+                  "entityId": {
+                    "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityId",
+                    "required": false
+                  },
+                  "entityName": {
+                    "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityName",
+                    "required": false
+                  },
+                  "userMessage": {
+                    "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                    "type": "string",
+                    "name": "userMessage",
+                    "required": false
+                  },
+                  "userParamsMessage": {
+                    "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                    "type": "string",
+                    "name": "userParamsMessage",
+                    "required": false
+                  },
+                  "userParams.key": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Key name of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.key",
+                    "required": false
+                  },
+                  "userParams.value": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Value of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.value",
+                    "required": false
+                  },
+                  "details.errorCode": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.errorCode",
+                    "required": false
+                  },
+                  "details.fieldName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.fieldName",
+                    "required": false
+                  },
+                  "details.entityId": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityId",
+                    "required": false
+                  },
+                  "details.entityName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityName",
+                    "required": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          ]
+        },
+        "supportedLanguages": [
+          "en-US"
+        ],
+        "debugSettings": {},
+        "type": "commonmodule",
+        "commonModuleFlowSettings": {
+          "destinationFlowTypes": [
+            "inboundcall",
+            "workflow",
+            "inboundshortmessage"
+          ]
+        },
+        "defaultSettings": {},
+        "flowMetaData": {
+          "flowDocumentVersion": "1.0",
+          "minimumServerVersion": "1.0",
+          "ttsDataVersion": "1.0"
+        },
+        "flowSequenceItemList": [
+          {
+            "startAction": "1f1a2a90-e3e9-4366-b6dc-ceda493c8764",
+            "trackingId": 10,
+            "id": "891ee3ee-b28d-4280-adc6-43b9a586285a",
+            "name": "Common Module Task",
+            "uiMetaData": {
+              "collapsed": false
+            },
+            "__type": "CommonModuleTask",
+            "paths": [],
+            "actionList": [
+              {
+                "trackingId": 11,
+                "id": "40d3f63e-cea1-4014-ab96-b1f2c4850788",
+                "name": "Exit Common Module",
+                "uiMetaData": {
+                  "collapsed": false
+                },
+                "__type": "EndTaskAction"
+              },
+              {
+                "actionName": "Insert Data Table Row - Outbound dialler",
+                "actionId": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+                "category": {
+                  "id": "Genesys Cloud Data Actions",
+                  "name": "Genesys Cloud Data Actions"
+                },
+                "useSuggestedTimeout": true,
+                "nextAction": "40d3f63e-cea1-4014-ab96-b1f2c4850788",
+                "trackingId": 12,
+                "id": "1f1a2a90-e3e9-4366-b6dc-ceda493c8764",
+                "name": "Call Data Action",
+                "uiMetaData": {
+                  "collapsed": false
+                },
+                "__type": "DataAction",
+                "errorBindings": [
+                  {
+                    "name": "errorCode",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "status",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "int"
+                        }
+                      },
+                      "text": "",
+                      "type": "int",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "correlationId",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "entityId",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "entityName",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "userMessage",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "userParamsMessage",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "userParams.key",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "userParams.value",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "details.errorCode",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "details.fieldName",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "details.entityId",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "details.entityName",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str_coll"
+                        }
+                      },
+                      "text": "",
+                      "type": "str_coll",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  }
+                ],
+                "processingPrompt": {
+                  "config": {
+                    "emp": {
+                      "pos": 1,
+                      "text": "",
+                      "type": "pmt"
+                    }
+                  },
+                  "text": "",
+                  "type": "pmt",
+                  "uiMetaData": {
+                    "mode": 3
+                  },
+                  "metaData": {},
+                  "version": 2,
+                  "outOfService": true
+                },
+                "inputs": [
+                  {
+                    "name": "Key",
+                    "value": {
+                      "config": {
+                        "lit": {
+                          "pos": 1,
+                          "text": "t532t45",
+                          "type": "str"
+                        }
+                      },
+                      "text": "t532t45",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 1
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "LeadID",
+                    "value": {
+                      "config": {
+                        "lit": {
+                          "pos": 1,
+                          "text": "hrthh",
+                          "type": "str"
+                        }
+                      },
+                      "text": "hrthh",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 1
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "ContactNumber",
+                    "value": {
+                      "config": {
+                        "lit": {
+                          "pos": 1,
+                          "text": "ehtrehrehtreht",
+                          "type": "str"
+                        }
+                      },
+                      "text": "ehtrehrehtreht",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 1
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "Key",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "LeadID",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  },
+                  {
+                    "name": "ContactNumber",
+                    "value": {
+                      "config": {
+                        "emp": {
+                          "pos": 1,
+                          "text": "",
+                          "type": "str"
+                        }
+                      },
+                      "text": "",
+                      "type": "str",
+                      "uiMetaData": {
+                        "mode": 3
+                      },
+                      "metaData": {},
+                      "version": 2
+                    }
+                  }
+                ],
+                "timeout": {
+                  "config": {
+                    "lit": {
+                      "pos": 1,
+                      "text": "P0D0H1M0S0F",
+                      "type": "dur"
+                    }
+                  },
+                  "text": "P0D0H1M0S0F",
+                  "type": "dur",
+                  "uiMetaData": {
+                    "mode": 1
+                  },
+                  "metaData": {},
+                  "version": 2
+                },
+                "paths": [
+                  {
+                    "label": "Success",
+                    "outputId": "__SUCCESS__"
+                  },
+                  {
+                    "label": "Failure",
+                    "outputId": "__FAILURE__"
+                  },
+                  {
+                    "label": "Timeout",
+                    "outputId": "__TIMEOUT__"
+                  }
+                ]
+              }
+            ],
+            "variables": []
+          }
+        ],
+        "supportedLanguageOptions": [
+          {
+            "language": "en-US"
+          }
+        ],
+        "variables": []
+      }
+    }
+  ],
+  "defaultSettings": {},
+  "flowMetaData": {
+    "flowDocumentVersion": "1.0",
+    "minimumServerVersion": "1.0",
+    "ttsDataVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "startAction": "387cdb67-6f72-4674-b5be-3444c49f0cb6",
+      "trackingId": 10,
+      "id": "595a453f-3423-4239-bd28-a679e4f4f156",
+      "name": "Initial State",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "State",
+      "actionList": [
+        {
+          "trackingId": 11,
+          "id": "2010eac6-17b8-4df9-bcd9-1731f399fc7c",
+          "name": "End Workflow",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "EndWorkflowAction",
+          "exitReason": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        },
+        {
+          "datatableId": "806a6f2b-8e66-4216-9ba4-dea824060b04",
+          "datatableName": "Australia Chatbot",
+          "nextAction": "389315a6-aa8a-4eb1-a7f0-e428fd3dd973",
+          "trackingId": 12,
+          "id": "2e9b4652-656f-4769-a4b1-5903a0615e2b",
+          "name": "Data Table Lookup",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataTableLookupAction",
+          "lookupKeyValue": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Flow.conversationId",
+                "type": "str",
+                "val": "51e697de-ee56-4035-9f71-0c94831285a4"
+              }
+            },
+            "text": "Flow.conversationId",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "51e697de-ee56-4035-9f71-0c94831285a4",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Flow.conversationId"
+                }
+              ]
+            },
+            "version": 2,
+            "name": "lookupKeyValue"
+          },
+          "outputs": [
+            {
+              "name": "FirstName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "Phone",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "BusinessName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "Email",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "ref": {
+                    "pos": 1,
+                    "text": "Flow.LaedID",
+                    "type": "str",
+                    "val": "14415877-4969-4661-a17c-69d8c0c5b55c"
+                  }
+                },
+                "text": "Flow.LaedID",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 2
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "14415877-4969-4661-a17c-69d8c0c5b55c",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Flow.LaedID"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            },
+            {
+              "name": "Outcome",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "Date",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LandingPage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "errorBindings": [
+            {
+              "name": "errorType",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "errorMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "paths": [
+            {
+              "nextActionId": "762c6799-8637-4cea-a0f0-6bc2d6d403a0",
+              "disabled": true,
+              "label": "Found",
+              "outputId": "__FOUND__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Not Found",
+              "outputId": "__NOT_FOUND__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "actionName": "Insert Data Table Row - Outbound dialler",
+          "actionId": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "nextAction": "2010eac6-17b8-4df9-bcd9-1731f399fc7c",
+          "trackingId": 14,
+          "id": "389315a6-aa8a-4eb1-a7f0-e428fd3dd973",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [
+            {
+              "name": "errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "status",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "int"
+                  }
+                },
+                "text": "",
+                "type": "int",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "correlationId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParamsMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.value",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.fieldName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "inputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "ref": {
+                    "pos": 1,
+                    "text": "Flow.conversationId",
+                    "type": "str",
+                    "val": "51e697de-ee56-4035-9f71-0c94831285a4"
+                  }
+                },
+                "text": "Flow.conversationId",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "51e697de-ee56-4035-9f71-0c94831285a4",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Flow.conversationId"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "failed",
+                    "type": "str"
+                  }
+                },
+                "text": "failed",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "disabled": true,
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "trackingId": 15,
+          "id": "762c6799-8637-4cea-a0f0-6bc2d6d403a0",
+          "name": "End Workflow",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "EndWorkflowAction",
+          "exitReason": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        },
+        {
+          "nextAction": "2e9b4652-656f-4769-a4b1-5903a0615e2b",
+          "trackingId": 16,
+          "id": "93e2e8db-1785-4d17-9719-132ee647e028",
+          "name": "Wait",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "WaitAction",
+          "trimDurationNearMaxRunningTime": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "false",
+                "type": "bln"
+              }
+            },
+            "text": "false",
+            "type": "bln",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "duration": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M45S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M45S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          }
+        },
+        {
+          "flowId": "64177876-38d4-496f-8b09-18368412407f",
+          "flowName": "Trigger Flow outcome for lead with opp",
+          "flowVersion": "2.0",
+          "flowLatestVersion": true,
+          "flowDebugPublished": false,
+          "nextAction": "af7a4302-95a2-4488-b8e8-b2309fe88033",
+          "trackingId": 18,
+          "id": "a35b840c-03a5-4612-a7e5-b1a3b61c8b2f",
+          "name": "Call Common Module",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "CallCommonModuleAction",
+          "inputs": [],
+          "outputs": [],
+          "paths": []
+        },
+        {
+          "actionName": "Insert Data Table Row - Outbound dialler",
+          "actionId": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "nextAction": "a35b840c-03a5-4612-a7e5-b1a3b61c8b2f",
+          "trackingId": 13,
+          "id": "1fc4e17a-1c88-4e7e-8223-a5867a62cf19",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [
+            {
+              "name": "errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "status",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "int"
+                  }
+                },
+                "text": "",
+                "type": "int",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "correlationId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParamsMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.value",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.fieldName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "inputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "ref": {
+                    "pos": 1,
+                    "text": "Flow.conversationId",
+                    "type": "str",
+                    "val": "51e697de-ee56-4035-9f71-0c94831285a4"
+                  }
+                },
+                "text": "Flow.conversationId",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "51e697de-ee56-4035-9f71-0c94831285a4",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Flow.conversationId"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "Random",
+                    "type": "str"
+                  }
+                },
+                "text": "Random",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "passed",
+                    "type": "str"
+                  }
+                },
+                "text": "passed",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "disabled": true,
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "actionName": "Insert Data Table Row - Outbound dialler",
+          "actionId": "custom_-_e6815f62-5c2d-4ee6-ada1-7adae82e85fc",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "nextAction": "93e2e8db-1785-4d17-9719-132ee647e028",
+          "trackingId": 20,
+          "id": "af7a4302-95a2-4488-b8e8-b2309fe88033",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [
+            {
+              "name": "errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "status",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "int"
+                  }
+                },
+                "text": "",
+                "type": "int",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "correlationId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParamsMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.value",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.fieldName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "inputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "ToString": {
+                    "pos": 1,
+                    "text": "ToString(Flow.StartDateTimeUtc)",
+                    "operands": [
+                      {
+                        "sysref": {
+                          "pos": 1,
+                          "text": "Flow.StartDateTimeUtc",
+                          "type": "dtm",
+                          "val": "__FLOW_START_TIME__"
+                        }
+                      }
+                    ],
+                    "type": "str"
+                  }
+                },
+                "text": "Flow.StartDateTimeUtc",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "__FLOW_START_TIME__",
+                      "type": "dtm",
+                      "isSysRef": true,
+                      "name": "Flow.StartDateTimeUtc"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "Random - failed",
+                    "type": "str"
+                  }
+                },
+                "text": "Random - failed",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "Random - failed",
+                    "type": "str"
+                  }
+                },
+                "text": "Random - failed",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "ContactNumber",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "disabled": true,
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": true,
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "nextAction": "1fc4e17a-1c88-4e7e-8223-a5867a62cf19",
+          "trackingId": 19,
+          "id": "387cdb67-6f72-4674-b5be-3444c49f0cb6",
+          "name": "End Workflow",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "EndWorkflowAction",
+          "exitReason": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        }
+      ],
+      "variables": []
+    }
+  ],
+  "supportedLanguageOptions": [
+    {
+      "language": "en-US"
+    }
+  ],
+  "variables": [
+    {
+      "id": "51e697de-ee56-4035-9f71-0c94831285a4",
+      "isCollection": false,
+      "isInternal": false,
+      "isOutput": true,
+      "isInput": true,
+      "isSecure": false,
+      "version": "1.0",
+      "__type": "StringVariable",
+      "name": "Flow.conversationId",
+      "initialValue": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "str"
+          }
+        },
+        "text": "",
+        "type": "str",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2,
+        "properties": {}
+      }
+    },
+    {
+      "id": "14415877-4969-4661-a17c-69d8c0c5b55c",
+      "isCollection": false,
+      "isInternal": false,
+      "isOutput": true,
+      "isInput": true,
+      "isSecure": false,
+      "version": "1.0",
+      "__type": "StringVariable",
+      "name": "Flow.LaedID",
+      "initialValue": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "str"
+          }
+        },
+        "text": "",
+        "type": "str",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2,
+        "properties": {}
+      }
+    }
+  ],
+  "versionMetaData": {
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow input schema",
+      "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+      "definitions": {
+        "archString": {
+          "archDataTypeId": "str",
+          "oneOf": [
+            {
+              "type": "null",
+              "description": "A NOT_SET String value."
+            },
+            {
+              "type": "string",
+              "maxLength": 32000,
+              "description": "A character string.  Examples: \"\", \"Hello\", \"Just say \\\"No!\\\"\""
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Flow.conversationId": {
+          "$ref": "#/definitions/archString"
+        },
+        "Flow.LaedID": {
+          "$ref": "#/definitions/archString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow output schema",
+      "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+      "definitions": {
+        "archString": {
+          "archDataTypeId": "str",
+          "oneOf": [
+            {
+              "type": "null",
+              "description": "A NOT_SET String value."
+            },
+            {
+              "type": "string",
+              "maxLength": 32000,
+              "description": "A character string.  Examples: \"\", \"Hello\", \"Just say \\\"No!\\\"\""
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Flow.conversationId": {
+          "$ref": "#/definitions/archString"
+        },
+        "Flow.LaedID": {
+          "$ref": "#/definitions/archString"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
