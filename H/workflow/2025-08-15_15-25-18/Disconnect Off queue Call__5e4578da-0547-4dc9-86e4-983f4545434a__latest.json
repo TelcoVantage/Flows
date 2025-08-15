@@ -1,0 +1,1137 @@
+{
+  "nextTrackingNumber": 19,
+  "defaultLanguage": "en-AU",
+  "initialSequence": "50386e5e-6681-446d-b288-43cee35a1f3e",
+  "name": "Disconnect Off queue Call",
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": [],
+    "actionServiceActions": [
+      {
+        "id": "custom_-_bf5dedf5-7521-41da-a883-22ad1dd95898",
+        "name": "Disconnect Call",
+        "category": "Genesys Cloud Data Actions",
+        "contract": {
+          "input": {
+            "inputSchemaFlattened": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "conversationId": {
+                    "type": "string",
+                    "name": "conversationId",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "output": {
+            "errorSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "ErrorBody",
+                "description": "Detailed information about an error response.",
+                "type": "object",
+                "required": [
+                  "errorCode",
+                  "status",
+                  "userMessage"
+                ],
+                "properties": {
+                  "errors": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "name": "errors",
+                    "required": false
+                  },
+                  "errorCode": {
+                    "description": "A code unique to this error.",
+                    "type": "string",
+                    "name": "errorCode",
+                    "required": false
+                  },
+                  "status": {
+                    "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                    "type": "integer",
+                    "name": "status",
+                    "required": false
+                  },
+                  "correlationId": {
+                    "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                    "type": "string",
+                    "name": "correlationId",
+                    "required": false
+                  },
+                  "entityId": {
+                    "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityId",
+                    "required": false
+                  },
+                  "entityName": {
+                    "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityName",
+                    "required": false
+                  },
+                  "userMessage": {
+                    "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                    "type": "string",
+                    "name": "userMessage",
+                    "required": false
+                  },
+                  "userParamsMessage": {
+                    "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                    "type": "string",
+                    "name": "userParamsMessage",
+                    "required": false
+                  },
+                  "userParams.key": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Key name of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.key",
+                    "required": false
+                  },
+                  "userParams.value": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Value of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.value",
+                    "required": false
+                  },
+                  "details.errorCode": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.errorCode",
+                    "required": false
+                  },
+                  "details.fieldName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.fieldName",
+                    "required": false
+                  },
+                  "details.entityId": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityId",
+                    "required": false
+                  },
+                  "details.entityName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityName",
+                    "required": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "successSchemaFlattened": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "result": "ok",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "conversationId": {
+              "type": "string",
+              "name": "conversationId",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "successSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true
+        },
+        "errorSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "ErrorBody",
+          "description": "Detailed information about an error response.",
+          "type": "object",
+          "required": [
+            "errorCode",
+            "status",
+            "userMessage"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "name": "errors",
+              "required": false
+            },
+            "errorCode": {
+              "description": "A code unique to this error.",
+              "type": "string",
+              "name": "errorCode",
+              "required": false
+            },
+            "status": {
+              "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+              "type": "integer",
+              "name": "status",
+              "required": false
+            },
+            "correlationId": {
+              "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+              "type": "string",
+              "name": "correlationId",
+              "required": false
+            },
+            "entityId": {
+              "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityId",
+              "required": false
+            },
+            "entityName": {
+              "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityName",
+              "required": false
+            },
+            "userMessage": {
+              "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+              "type": "string",
+              "name": "userMessage",
+              "required": false
+            },
+            "userParamsMessage": {
+              "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+              "type": "string",
+              "name": "userParamsMessage",
+              "required": false
+            },
+            "userParams.key": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Key name of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.key",
+              "required": false
+            },
+            "userParams.value": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Value of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.value",
+              "required": false
+            },
+            "details.errorCode": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.errorCode",
+              "required": false
+            },
+            "details.fieldName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.fieldName",
+              "required": false
+            },
+            "details.entityId": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityId",
+              "required": false
+            },
+            "details.entityName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityName",
+              "required": false
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ]
+  },
+  "supportedLanguages": [
+    "en-AU"
+  ],
+  "manifest": {
+    "dataAction": [
+      {
+        "name": "Disconnect Call",
+        "id": "custom_-_bf5dedf5-7521-41da-a883-22ad1dd95898",
+        "context": [
+          {
+            "actionName": "Call Data Action",
+            "id": "473ce63f-c798-4dd8-bc9e-2360740f3c91",
+            "name": "Call Data Action"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-AU"
+      }
+    ],
+    "userPrompt": [],
+    "systemPrompt": []
+  },
+  "type": "workflow",
+  "debugSettings": {},
+  "errorHandling": {
+    "queue": {
+      "config": {
+        "emp": {
+          "pos": 1,
+          "text": "",
+          "type": "que"
+        }
+      },
+      "text": "",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "handlingType": "EndWorkflow"
+  },
+  "defaultSettings": {},
+  "flowMetaData": {
+    "flowDocumentVersion": "1.0",
+    "minimumServerVersion": "1.0",
+    "ttsDataVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "startAction": "9fc831b1-5eb5-47a5-8d13-7f2a13fa64ed",
+      "trackingId": 10,
+      "id": "50386e5e-6681-446d-b288-43cee35a1f3e",
+      "name": "Initial State",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "State",
+      "actionList": [
+        {
+          "trackingId": 11,
+          "id": "dc2b6ad3-d216-4fe5-b62c-54e8e82b7a73",
+          "name": "End Workflow",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "EndWorkflowAction",
+          "exitReason": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        },
+        {
+          "nextAction": "dc2b6ad3-d216-4fe5-b62c-54e8e82b7a73",
+          "trackingId": 14,
+          "id": "f37d9688-77b2-452e-affb-f067028e992c",
+          "name": "Decision",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DecisionAction",
+          "expression": {
+            "config": {
+              "If": {
+                "pos": 1,
+                "text": "If(IsNotSetOrEmpty(ToString(GetJsonObjectProperty(Flow.jsonData, \"queueId\"))), true, false)",
+                "operands": [
+                  {
+                    "IsNotSetOrEmpty": {
+                      "pos": 4,
+                      "operands": [
+                        {
+                          "ToString": {
+                            "pos": 20,
+                            "operands": [
+                              {
+                                "GetJsonObjectProperty": {
+                                  "pos": 29,
+                                  "operands": [
+                                    {
+                                      "ref": {
+                                        "pos": 51,
+                                        "text": "Flow.jsonData",
+                                        "type": "jsn",
+                                        "val": "309e60ea-b37d-44a8-943f-8c6291f88dd9"
+                                      }
+                                    },
+                                    {
+                                      "lit": {
+                                        "pos": 66,
+                                        "text": "queueId",
+                                        "type": "str"
+                                      }
+                                    }
+                                  ],
+                                  "type": "jsn"
+                                }
+                              }
+                            ],
+                            "type": "str"
+                          }
+                        }
+                      ],
+                      "type": "bln"
+                    }
+                  },
+                  {
+                    "lit": {
+                      "pos": 80,
+                      "text": "true",
+                      "type": "bln"
+                    }
+                  },
+                  {
+                    "lit": {
+                      "pos": 86,
+                      "text": "false",
+                      "type": "bln"
+                    }
+                  }
+                ],
+                "type": "bln"
+              }
+            },
+            "text": "if(IsNotSetOrEmpty(toString(GetJsonObjectProperty(Flow.jsonData, \"queueId\"))), true, false)",
+            "type": "bln",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "309e60ea-b37d-44a8-943f-8c6291f88dd9",
+                  "type": "jsn",
+                  "isSysRef": false,
+                  "name": "Flow.jsonData"
+                }
+              ]
+            },
+            "version": 2
+          },
+          "paths": [
+            {
+              "nextActionId": "473ce63f-c798-4dd8-bc9e-2360740f3c91",
+              "label": "Yes",
+              "outputId": "__YES__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "No",
+              "outputId": "__NO__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "nextAction": "f37d9688-77b2-452e-affb-f067028e992c",
+          "trackingId": 13,
+          "id": "9fc831b1-5eb5-47a5-8d13-7f2a13fa64ed",
+          "name": "Set Conversation Data",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "SetConversationDataAction",
+          "participantId": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "conversationId": {
+            "config": {
+              "ToString": {
+                "pos": 1,
+                "text": "ToString(GetJsonObjectProperty(Flow.jsonData, \"conversationId\"))",
+                "operands": [
+                  {
+                    "GetJsonObjectProperty": {
+                      "pos": 1,
+                      "operands": [
+                        {
+                          "ref": {
+                            "pos": 23,
+                            "text": "Flow.jsonData",
+                            "type": "jsn",
+                            "val": "309e60ea-b37d-44a8-943f-8c6291f88dd9"
+                          }
+                        },
+                        {
+                          "lit": {
+                            "pos": 37,
+                            "text": "conversationId",
+                            "type": "str"
+                          }
+                        }
+                      ],
+                      "type": "jsn"
+                    }
+                  }
+                ],
+                "type": "str"
+              }
+            },
+            "text": "GetJsonObjectProperty(Flow.jsonData,\"conversationId\")",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "309e60ea-b37d-44a8-943f-8c6291f88dd9",
+                  "type": "jsn",
+                  "isSysRef": false,
+                  "name": "Flow.jsonData"
+                }
+              ]
+            },
+            "version": 2
+          },
+          "variables": [
+            {
+              "expression": {
+                "config": {
+                  "ToString": {
+                    "pos": 1,
+                    "text": "ToString(GetJsonObjectProperty(Flow.jsonData, \"queueId\"))",
+                    "operands": [
+                      {
+                        "GetJsonObjectProperty": {
+                          "pos": 1,
+                          "operands": [
+                            {
+                              "ref": {
+                                "pos": 23,
+                                "text": "Flow.jsonData",
+                                "type": "jsn",
+                                "val": "309e60ea-b37d-44a8-943f-8c6291f88dd9"
+                              }
+                            },
+                            {
+                              "lit": {
+                                "pos": 38,
+                                "text": "queueId",
+                                "type": "str"
+                              }
+                            }
+                          ],
+                          "type": "jsn"
+                        }
+                      }
+                    ],
+                    "type": "str"
+                  }
+                },
+                "text": "GetJsonObjectProperty(Flow.jsonData, \"queueId\")",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "309e60ea-b37d-44a8-943f-8c6291f88dd9",
+                      "type": "jsn",
+                      "isSysRef": false,
+                      "name": "Flow.jsonData"
+                    }
+                  ]
+                },
+                "version": 2
+              },
+              "variable": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "queue",
+                    "type": "str"
+                  }
+                },
+                "text": "queue",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "paths": [
+            {
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "actionName": "Disconnect Call",
+          "actionId": "custom_-_bf5dedf5-7521-41da-a883-22ad1dd95898",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "trackingId": 15,
+          "id": "473ce63f-c798-4dd8-bc9e-2360740f3c91",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [
+            {
+              "name": "errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "status",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "int"
+                  }
+                },
+                "text": "",
+                "type": "int",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "correlationId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParamsMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "userParams.value",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.errorCode",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.fieldName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityId",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "details.entityName",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str_coll"
+                  }
+                },
+                "text": "",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "inputs": [
+            {
+              "name": "conversationId",
+              "value": {
+                "config": {
+                  "ToString": {
+                    "pos": 1,
+                    "text": "ToString(GetJsonObjectProperty(Flow.jsonData, \"conversationId\"))",
+                    "operands": [
+                      {
+                        "GetJsonObjectProperty": {
+                          "pos": 1,
+                          "operands": [
+                            {
+                              "ref": {
+                                "pos": 23,
+                                "text": "Flow.jsonData",
+                                "type": "jsn",
+                                "val": "309e60ea-b37d-44a8-943f-8c6291f88dd9"
+                              }
+                            },
+                            {
+                              "lit": {
+                                "pos": 37,
+                                "text": "conversationId",
+                                "type": "str"
+                              }
+                            }
+                          ],
+                          "type": "jsn"
+                        }
+                      }
+                    ],
+                    "type": "str"
+                  }
+                },
+                "text": "GetJsonObjectProperty(Flow.jsonData,\"conversationId\")",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "309e60ea-b37d-44a8-943f-8c6291f88dd9",
+                      "type": "jsn",
+                      "isSysRef": false,
+                      "name": "Flow.jsonData"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        }
+      ],
+      "variables": []
+    }
+  ],
+  "supportedLanguageOptions": [
+    {
+      "language": "en-AU"
+    }
+  ],
+  "variables": [
+    {
+      "id": "309e60ea-b37d-44a8-943f-8c6291f88dd9",
+      "isCollection": false,
+      "isInternal": false,
+      "isOutput": false,
+      "isInput": true,
+      "isSecure": false,
+      "version": "1.0",
+      "typeIdentifier": "jsn",
+      "__type": "JsonVariable",
+      "name": "Flow.jsonData",
+      "initialValue": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "jsn"
+          }
+        },
+        "text": "",
+        "type": "jsn",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2,
+        "properties": {}
+      }
+    },
+    {
+      "id": "eb72f8fb-39ce-4278-809a-186b3e15c9b1",
+      "isCollection": false,
+      "isInternal": false,
+      "isOutput": false,
+      "isInput": false,
+      "isSecure": false,
+      "version": "1.0",
+      "__type": "StringVariable",
+      "name": "Flow.segment",
+      "initialValue": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "str"
+          }
+        },
+        "text": "",
+        "type": "str",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  ],
+  "versionMetaData": {
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow input schema",
+      "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+      "definitions": {
+        "archJSON": {
+          "archDataTypeId": "jsn",
+          "oneOf": [
+            {
+              "type": "null",
+              "description": "A NOT_SET JSON value."
+            },
+            {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "description": "A JSON value."
+                }
+              }
+            }
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "Flow.jsonData": {
+          "$ref": "#/definitions/archJSON"
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow output schema",
+      "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+}
