@@ -1,0 +1,1406 @@
+{
+  "defaultLanguage": "en-AU",
+  "initialSequence": "ec6168e3-fdd7-4433-ba9e-ba1c110b1ac2",
+  "name": "Staging-Callback-COB",
+  "nextTrackingNumber": 13,
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": []
+  },
+  "supportedLanguages": [
+    "en-AU"
+  ],
+  "manifest": {
+    "queue": [
+      {
+        "name": "Staging-callback-COB",
+        "id": "d41032da-1d43-4f56-a68a-8ff54d82625b",
+        "context": [
+          {
+            "actionName": "Transfer to ACD",
+            "id": "a886c758-8eca-4001-bf02-87c97530a380",
+            "name": "Transfer to ACD"
+          }
+        ]
+      },
+      {
+        "name": "Staging-Callback",
+        "id": "5e42da42-bc61-4b63-989d-e496c52b72a0",
+        "context": [
+          {
+            "id": "errorHandling"
+          }
+        ]
+      }
+    ],
+    "ttsEngine": [
+      {
+        "name": "Genesys TTS",
+        "id": "genesys",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "ttsVoice": [
+      {
+        "name": "Kandyce",
+        "id": "genesys/Kandyce",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-AU"
+      }
+    ],
+    "userPrompt": [
+      {
+        "context": [
+          {
+            "id": "bbc6810e-dd49-4e60-9a4f-4281afe90d4d"
+          }
+        ],
+        "id": "74c35b78-5dd2-46d4-91ae-5d8d842f41a8",
+        "name": "AUBscCallBackWelcome"
+      }
+    ],
+    "systemPrompt": []
+  },
+  "type": "inboundcall",
+  "isSecure": false,
+  "debugSettings": {},
+  "disableAsr": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "disableAsrCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "errorHandling": {
+    "audio": {
+      "bargeInExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "true",
+            "type": "bln"
+          }
+        },
+        "text": "true",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "flushExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "defaultAudio": {
+        "config": {
+          "AudioPlaybackOptions": {
+            "pos": 1,
+            "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+            "operands": [
+              {
+                "ToAudioBlank": {
+                  "pos": 22,
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 35,
+                        "text": "100",
+                        "type": "int"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              {
+                "lit": {
+                  "pos": 41,
+                  "text": "true",
+                  "type": "bln"
+                }
+              }
+            ],
+            "type": "aud"
+          }
+        },
+        "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+        "type": "aud",
+        "uiMetaData": {
+          "sequenceItems": [
+            {
+              "parameter": 100,
+              "type": 4,
+              "error": "",
+              "$$hashKey": "object:5035"
+            }
+          ],
+          "customExpressionMode": false,
+          "optional": true
+        },
+        "metaData": {}
+      },
+      "cases": []
+    },
+    "queue": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "Staging-Callback",
+          "type": "que",
+          "val": "5e42da42-bc61-4b63-989d-e496c52b72a0"
+        }
+      },
+      "text": "Staging-Callback",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2
+    },
+    "handlingType": "Queue"
+  },
+  "initialPrompts": {
+    "bargeInExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "false",
+          "type": "bln"
+        }
+      },
+      "text": "false",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2
+    },
+    "flushExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "false",
+          "type": "bln"
+        }
+      },
+      "text": "false",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2
+    },
+    "defaultAudio": {
+      "config": {
+        "AudioPlaybackOptions": {
+          "pos": 1,
+          "text": "AudioPlaybackOptions(ToAudio(Prompt.AUBscCallBackWelcome), false)",
+          "operands": [
+            {
+              "ToAudio": {
+                "pos": 22,
+                "operands": [
+                  {
+                    "ref": {
+                      "pos": 30,
+                      "text": "Prompt.AUBscCallBackWelcome",
+                      "type": "pmt",
+                      "val": "74c35b78-5dd2-46d4-91ae-5d8d842f41a8"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            {
+              "lit": {
+                "pos": 60,
+                "text": "false",
+                "type": "bln"
+              }
+            }
+          ],
+          "type": "aud"
+        }
+      },
+      "text": "AudioPlaybackOptions(ToAudio(Prompt.AUBscCallBackWelcome), false)",
+      "type": "aud",
+      "uiMetaData": {
+        "sequenceItems": [
+          {
+            "type": 1,
+            "error": "",
+            "$$hashKey": "object:1612",
+            "parameter": "74c35b78-5dd2-46d4-91ae-5d8d842f41a8",
+            "expressionName": "Prompt.AUBscCallBackWelcome",
+            "isSystem": false,
+            "name": "Prompt.AUBscCallBackWelcome"
+          }
+        ],
+        "customExpressionMode": false,
+        "optional": true
+      },
+      "metaData": {
+        "references": [
+          {
+            "id": "74c35b78-5dd2-46d4-91ae-5d8d842f41a8",
+            "type": "pmt",
+            "isSysRef": false,
+            "name": "Prompt.AUBscCallBackWelcome"
+          }
+        ]
+      }
+    },
+    "cases": []
+  },
+  "speechRecCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "speechRecEngine": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "",
+        "type": "str"
+      }
+    },
+    "text": "",
+    "type": "str",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "suppressRecording": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "defaultSettings": {
+    "PlayAudioOnSilenceAction": {
+      "allowedRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "5",
+            "type": "int"
+          }
+        },
+        "text": "5",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DetectSilenceAction": {
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DataAction": {
+      "processingPrompt": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "pmt"
+          }
+        },
+        "text": "",
+        "type": "pmt",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "CollectInputAction": {
+      "interDigitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M3S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M3S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "noEntryTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M5S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M5S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DialExtensionAction": {
+      "digitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M6S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M6S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferUserAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferExternalAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferGroupAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferFlowSecureAction": {
+      "connTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M15S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M15S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "Menu": {
+      "promptRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "0",
+            "type": "int"
+          }
+        },
+        "text": "0",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "extensionDialingDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "SpeechRec": {
+      "speechRecMinConfidence": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "50",
+            "type": "int"
+          }
+        },
+        "text": "50",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S100F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S100F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S1500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S1500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M20S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M20S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  },
+  "flowMetaData": {
+    "flowDocumentVersion": "1.0",
+    "minimumServerVersion": "1.0",
+    "ttsDataVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "defaultMenuChoice": "40eb85e2-17a1-4210-a68e-615641046643",
+      "trackingId": 10,
+      "id": "ec6168e3-fdd7-4433-ba9e-ba1c110b1ac2",
+      "name": "Main Menu",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "Menu",
+      "extensionDialingDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "menuChoiceList": [
+        {
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "2a4de892-26f8-49b9-a42c-af9aa0e3905f",
+          "name": "Disconnect",
+          "action": {
+            "trackingId": 11,
+            "id": "6efc54e1-8f0e-445f-b650-db6e685cb746",
+            "name": "Disconnect",
+            "uiMetaData": {
+              "collapsed": false
+            },
+            "__type": "DisconnectAction"
+          },
+          "digit": 9
+        },
+        {
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "40eb85e2-17a1-4210-a68e-615641046643",
+          "name": "Transfer to ACD",
+          "action": {
+            "useDefaultHandling": true,
+            "trackingId": 12,
+            "id": "a886c758-8eca-4001-bf02-87c97530a380",
+            "name": "Transfer to ACD",
+            "uiMetaData": {
+              "collapsed": false
+            },
+            "__type": "TransferPureMatchAction",
+            "appendSkills": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "languageSkill": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "lac"
+                }
+              },
+              "text": "",
+              "type": "lac",
+              "uiMetaData": {
+                "mode": 3
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "preferredAgents": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "cpx_agent_score_pair_coll"
+                }
+              },
+              "text": "",
+              "type": "cpx_agent_score_pair_coll",
+              "uiMetaData": {
+                "mode": 3
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "priority": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "0",
+                  "type": "int"
+                }
+              },
+              "text": "0",
+              "type": "int",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "queues": [
+              {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "Staging-callback-COB",
+                    "type": "que",
+                    "val": "d41032da-1d43-4f56-a68a-8ff54d82625b"
+                  }
+                },
+                "text": "Staging-callback-COB",
+                "type": "que",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            ],
+            "skills": [],
+            "errorBindings": [
+              {
+                "name": "errorType",
+                "value": {
+                  "config": {
+                    "emp": {
+                      "pos": 1,
+                      "text": "",
+                      "type": "str"
+                    }
+                  },
+                  "text": "",
+                  "type": "str",
+                  "uiMetaData": {
+                    "mode": 3
+                  },
+                  "metaData": {},
+                  "version": 2
+                }
+              },
+              {
+                "name": "errorMessage",
+                "value": {
+                  "config": {
+                    "emp": {
+                      "pos": 1,
+                      "text": "",
+                      "type": "str"
+                    }
+                  },
+                  "text": "",
+                  "type": "str",
+                  "uiMetaData": {
+                    "mode": 3
+                  },
+                  "metaData": {},
+                  "version": 2
+                }
+              }
+            ],
+            "preTransferAudio": {
+              "bargeInExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                },
+                "text": "true",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "flushExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "false",
+                    "type": "bln"
+                  }
+                },
+                "text": "false",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "defaultAudio": {
+                "config": {
+                  "AudioPlaybackOptions": {
+                    "pos": 1,
+                    "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                    "operands": [
+                      {
+                        "ToAudioBlank": {
+                          "pos": 22,
+                          "operands": [
+                            {
+                              "lit": {
+                                "pos": 35,
+                                "text": "100",
+                                "type": "int"
+                              }
+                            }
+                          ],
+                          "type": "aud"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 41,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": [
+                    {
+                      "parameter": 100,
+                      "type": 4,
+                      "error": "",
+                      "$$hashKey": "object:3264"
+                    }
+                  ],
+                  "customExpressionMode": false
+                },
+                "metaData": {}
+              },
+              "cases": []
+            },
+            "preTransferCommunication": {
+              "text": "MakeCommunication(\n  \"\")",
+              "type": "com",
+              "uiMetaData": {
+                "mode": 4,
+                "builder": {
+                  "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                  "id": "c089106d-bb67-4427-b8c3-50f43390784b",
+                  "version": 1,
+                  "builderParts": [
+                    {
+                      "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                      "id": "f5f0faf5-e047-442a-bfa0-57aaa1c40b1e",
+                      "outOfService": false,
+                      "version": 1,
+                      "builderPartExpressions": [
+                        {
+                          "config": {
+                            "lit": {
+                              "pos": 1,
+                              "text": "",
+                              "type": "str"
+                            }
+                          },
+                          "text": "",
+                          "type": "str",
+                          "uiMetaData": {
+                            "mode": 1
+                          },
+                          "metaData": {},
+                          "version": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "version": 2
+            },
+            "failureTransferAudio": {
+              "bargeInExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                },
+                "text": "true",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "flushExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "false",
+                    "type": "bln"
+                  }
+                },
+                "text": "false",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "defaultAudio": {
+                "config": {
+                  "AudioPlaybackOptions": {
+                    "pos": 1,
+                    "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                    "operands": [
+                      {
+                        "ToAudioBlank": {
+                          "pos": 22,
+                          "operands": [
+                            {
+                              "lit": {
+                                "pos": 35,
+                                "text": "100",
+                                "type": "int"
+                              }
+                            }
+                          ],
+                          "type": "aud"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 41,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": [
+                    {
+                      "parameter": 100,
+                      "type": 4,
+                      "error": "",
+                      "$$hashKey": "object:3329"
+                    }
+                  ],
+                  "customExpressionMode": false
+                },
+                "metaData": {}
+              },
+              "cases": []
+            },
+            "failureTransferCommunication": {
+              "text": "MakeCommunication(\n  \"\")",
+              "type": "com",
+              "uiMetaData": {
+                "mode": 4,
+                "builder": {
+                  "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                  "id": "13a808fe-6e9e-43d4-ab85-6e8302b59df2",
+                  "version": 1,
+                  "builderParts": [
+                    {
+                      "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                      "id": "1e9a01a4-4abc-4b01-a8fc-8e309aa9195c",
+                      "outOfService": false,
+                      "version": 1,
+                      "builderPartExpressions": [
+                        {
+                          "config": {
+                            "lit": {
+                              "pos": 1,
+                              "text": "",
+                              "type": "str"
+                            }
+                          },
+                          "text": "",
+                          "type": "str",
+                          "uiMetaData": {
+                            "mode": 1
+                          },
+                          "metaData": {},
+                          "version": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "version": 2
+            },
+            "paths": [
+              {
+                "label": "Failure",
+                "outputId": "__FAILURE__"
+              }
+            ]
+          },
+          "digit": 1
+        }
+      ],
+      "promptRepeatCount": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "prompts": {
+        "bargeInExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "true",
+              "type": "bln"
+            }
+          },
+          "text": "true",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2
+        },
+        "flushExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "false",
+              "type": "bln"
+            }
+          },
+          "text": "false",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2
+        },
+        "defaultAudio": {
+          "config": {
+            "AudioPlaybackOptions": {
+              "pos": 1,
+              "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+              "operands": [
+                {
+                  "ToAudioBlank": {
+                    "pos": 22,
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 35,
+                          "text": "100",
+                          "type": "int"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "lit": {
+                    "pos": 41,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                }
+              ],
+              "type": "aud"
+            }
+          },
+          "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+          "type": "aud",
+          "uiMetaData": {
+            "sequenceItems": [
+              {
+                "parameter": 100,
+                "type": 4,
+                "error": "",
+                "$$hashKey": "object:2590"
+              }
+            ],
+            "customExpressionMode": false,
+            "optional": true
+          },
+          "metaData": {}
+        },
+        "cases": []
+      },
+      "speechRecMinConfidence": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "bln"
+          }
+        },
+        "text": "",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  ],
+  "supportedLanguageOptions": [
+    {
+      "language": "en-AU",
+      "languageSkill": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "lac"
+          }
+        },
+        "text": "",
+        "type": "lac",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "textToSpeech": {
+        "engine": {
+          "selection": "default",
+          "name": "Genesys TTS",
+          "id": "genesys"
+        },
+        "voice": {
+          "selection": "specific",
+          "name": "Kandyce",
+          "id": "genesys/Kandyce"
+        }
+      }
+    }
+  ],
+  "variables": [],
+  "versionMetaData": {
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow input schema",
+      "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow output schema",
+      "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+}

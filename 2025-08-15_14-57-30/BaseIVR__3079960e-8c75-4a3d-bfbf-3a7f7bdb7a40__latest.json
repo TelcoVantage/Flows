@@ -1,0 +1,3109 @@
+{
+  "defaultLanguage": "en-AU",
+  "initialSequence": "7580b9e5-1f6f-411c-a9c0-84fdc8d449bd",
+  "supportedLanguages": [
+    "en-AU"
+  ],
+  "description": "Used for queue and call flow development",
+  "name": "BaseIVR",
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": [],
+    "voiceXmlOperations": []
+  },
+  "nextTrackingNumber": 50,
+  "type": "inboundcall",
+  "manifest": {
+    "queue": [
+      {
+        "name": "Base_Q",
+        "id": "fe8ec1d3-b69e-403b-b9f0-21ab031c7414",
+        "context": [
+          {
+            "name": "Transfer to Base Queue",
+            "actionName": "Transfer to ACD",
+            "id": "c07a097d-78fc-4654-8c68-b2c6b6d52f2b"
+          }
+        ]
+      }
+    ],
+    "user": [
+      {
+        "name": "Priyesh Gunasekera",
+        "id": "ce2ea24c-5ebb-4643-898d-3a30ebfed0c7",
+        "context": [
+          {
+            "name": "Transfer to Voicemail",
+            "actionName": "Transfer to Voicemail",
+            "id": "cfd6c4d5-f473-461d-beac-b37d5af1d38c"
+          }
+        ]
+      },
+      {
+        "name": "Richard Dib",
+        "id": "d234c920-9fb3-4e6c-90ee-c0a1740805cd",
+        "context": [
+          {
+            "name": "Transfer to Voicemail",
+            "actionName": "Transfer to Voicemail",
+            "id": "edd7bcef-660f-4088-bda8-24b480fec091"
+          }
+        ]
+      },
+      {
+        "name": "Sze Kong Lee",
+        "id": "31252056-f9df-41c9-89b5-5ce745dc4a1a",
+        "context": [
+          {
+            "name": "Transfer to Voicemail",
+            "actionName": "Transfer to Voicemail",
+            "id": "1ca82208-4ce3-48dd-8ee5-261b21be7bd8"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-AU"
+      }
+    ],
+    "userPrompt": [
+      {
+        "name": "AUGenericWelcome",
+        "id": "bfc3f9b6-8b2b-45ee-8652-0a939e617753",
+        "context": [
+          {
+            "id": "3079960e-8c75-4a3d-bfbf-3a7f7bdb7a40"
+          }
+        ]
+      },
+      {
+        "name": "AUTransferingyounow",
+        "id": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7",
+        "context": [
+          {
+            "name": "Transfer to Number",
+            "actionName": "Transfer to Number",
+            "id": "5a2ec856-1af4-4400-a570-ea4c6bb4cb03"
+          },
+          {
+            "name": "Transfer to Number",
+            "actionName": "Transfer to Number",
+            "id": "31837548-4b2a-4b11-8685-5233e95bb74f"
+          }
+        ]
+      }
+    ],
+    "systemPrompt": []
+  },
+  "isSecure": false,
+  "debugSettings": {},
+  "defaultSettings": {
+    "CollectInputAction": {
+      "interDigitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M3S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M3S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "noEntryTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M5S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M5S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    },
+    "DialExtensionAction": {
+      "digitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M6S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M6S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    },
+    "SpeechRec": {
+      "speechRecMinConfidence": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "50",
+            "type": "int"
+          }
+        },
+        "text": "50",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M20S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M20S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "invalidSpeechRecPromptsList": [
+        {
+          "defaultAudio": {
+            "config": {
+              "ToAudio": {
+                "pos": 1,
+                "text": "ToAudio(PromptSystem.didnt_understand_try_again)",
+                "operands": [
+                  {
+                    "sysref": {
+                      "pos": 9,
+                      "text": "PromptSystem.didnt_understand_try_again",
+                      "type": "pmt",
+                      "val": "__didntunderstandtryagain__"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            "text": "ToAudio(PromptSystem.didnt_understand_try_again)",
+            "type": "aud",
+            "uiMetaData": {
+              "sequenceItems": [
+                {
+                  "type": 1,
+                  "parameter": "__didntunderstandtryagain__",
+                  "name": "PromptSystem.didnt_understand_try_again",
+                  "isSystem": true
+                }
+              ],
+              "customExpressionMode": false
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "__didntunderstandtryagain__",
+                  "type": "pmt",
+                  "isSysRef": true,
+                  "name": "PromptSystem.didnt_understand_try_again"
+                }
+              ]
+            }
+          },
+          "cases": [],
+          "bargeIn": "Enabled",
+          "bargeInDuration": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M0S500F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M0S500F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        },
+        {
+          "defaultAudio": {
+            "config": {
+              "ToAudio": {
+                "pos": 1,
+                "text": "ToAudio(PromptSystem.please_try_again)",
+                "operands": [
+                  {
+                    "sysref": {
+                      "pos": 9,
+                      "text": "PromptSystem.please_try_again",
+                      "type": "pmt",
+                      "val": "__pleasetryagain__"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            "text": "ToAudio(PromptSystem.please_try_again)",
+            "type": "aud",
+            "uiMetaData": {
+              "sequenceItems": [
+                {
+                  "type": 1,
+                  "parameter": "__pleasetryagain__",
+                  "name": "PromptSystem.please_try_again",
+                  "isSystem": true
+                }
+              ],
+              "customExpressionMode": false
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "__pleasetryagain__",
+                  "type": "pmt",
+                  "isSysRef": true,
+                  "name": "PromptSystem.please_try_again"
+                }
+              ]
+            }
+          },
+          "cases": [],
+          "bargeIn": "Enabled",
+          "bargeInDuration": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M0S500F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M0S500F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        },
+        {
+          "defaultAudio": {
+            "config": {
+              "ToAudio": {
+                "pos": 1,
+                "text": "ToAudio(PromptSystem.didnt_get_that_try_again)",
+                "operands": [
+                  {
+                    "sysref": {
+                      "pos": 9,
+                      "text": "PromptSystem.didnt_get_that_try_again",
+                      "type": "pmt",
+                      "val": "__didntgetthattryagain__"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            "text": "ToAudio(PromptSystem.didnt_get_that_try_again)",
+            "type": "aud",
+            "uiMetaData": {
+              "sequenceItems": [
+                {
+                  "type": 1,
+                  "parameter": "__didntgetthattryagain__",
+                  "name": "PromptSystem.didnt_get_that_try_again",
+                  "isSystem": true
+                }
+              ],
+              "customExpressionMode": false
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "__didntgetthattryagain__",
+                  "type": "pmt",
+                  "isSysRef": true,
+                  "name": "PromptSystem.didnt_get_that_try_again"
+                }
+              ]
+            }
+          },
+          "cases": [],
+          "bargeIn": "Enabled",
+          "bargeInDuration": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M0S500F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M0S500F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        },
+        {
+          "defaultAudio": {
+            "config": {
+              "ToAudio": {
+                "pos": 1,
+                "text": "ToAudio(PromptSystem.having_trouble_understanding)",
+                "operands": [
+                  {
+                    "sysref": {
+                      "pos": 9,
+                      "text": "PromptSystem.having_trouble_understanding",
+                      "type": "pmt",
+                      "val": "__havingtroubleunderstanding__"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            "text": "ToAudio(PromptSystem.having_trouble_understanding)",
+            "type": "aud",
+            "uiMetaData": {
+              "sequenceItems": [
+                {
+                  "type": 1,
+                  "parameter": "__havingtroubleunderstanding__",
+                  "name": "PromptSystem.having_trouble_understanding",
+                  "isSystem": true
+                }
+              ],
+              "customExpressionMode": false
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "__havingtroubleunderstanding__",
+                  "type": "pmt",
+                  "isSysRef": true,
+                  "name": "PromptSystem.having_trouble_understanding"
+                }
+              ]
+            }
+          },
+          "cases": [],
+          "bargeIn": "Enabled",
+          "bargeInDuration": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M0S500F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M0S500F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        }
+      ]
+    },
+    "Menu": {
+      "promptRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "5",
+            "type": "int"
+          }
+        },
+        "text": "5",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M10S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M10S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "extensionDialingDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M2S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M2S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "useExtensionDialing": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    }
+  },
+  "disableAsr": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "disableAsrCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "errorHandling": {
+    "audio": {
+      "defaultAudio": {
+        "config": {
+          "ToAudioTTS": {
+            "pos": 1,
+            "text": "ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\")",
+            "operands": [
+              {
+                "lit": {
+                  "pos": 12,
+                  "text": "Sorry, an error occurred. Please try your call again.",
+                  "type": "str"
+                }
+              }
+            ],
+            "type": "aud"
+          }
+        },
+        "text": "ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\")",
+        "type": "aud",
+        "uiMetaData": {
+          "sequenceItems": [
+            {
+              "type": 0,
+              "parameter": "Sorry, an error occurred. Please try your call again."
+            }
+          ],
+          "customExpressionMode": false,
+          "optional": true
+        },
+        "metaData": {}
+      },
+      "cases": [],
+      "bargeIn": "Enabled",
+      "bargeInDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    },
+    "handlingType": "Disconnect",
+    "queue": {
+      "config": {
+        "emp": {
+          "pos": 1,
+          "text": "",
+          "type": "que"
+        }
+      },
+      "text": "",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {}
+    }
+  },
+  "initialPrompts": {
+    "defaultAudio": {
+      "config": {
+        "ToAudio": {
+          "pos": 1,
+          "text": "ToAudio(Prompt.AUGenericWelcome)",
+          "operands": [
+            {
+              "ref": {
+                "pos": 9,
+                "text": "Prompt.AUGenericWelcome",
+                "type": "pmt",
+                "val": "bfc3f9b6-8b2b-45ee-8652-0a939e617753"
+              }
+            }
+          ],
+          "type": "aud"
+        }
+      },
+      "text": "ToAudio(Prompt.AUGenericWelcome)",
+      "type": "aud",
+      "uiMetaData": {
+        "sequenceItems": [
+          {
+            "type": 1,
+            "name": "Prompt.AUGenericWelcome",
+            "isSystem": false,
+            "expressionName": "Prompt.AUGenericWelcome",
+            "parameter": "bfc3f9b6-8b2b-45ee-8652-0a939e617753"
+          }
+        ],
+        "customExpressionMode": false,
+        "optional": true
+      },
+      "metaData": {
+        "references": [
+          {
+            "id": "bfc3f9b6-8b2b-45ee-8652-0a939e617753",
+            "type": "pmt",
+            "isSysRef": false,
+            "name": "Prompt.AUGenericWelcome"
+          }
+        ]
+      }
+    },
+    "cases": [],
+    "bargeIn": "Enabled",
+    "bargeInDuration": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "P0D0H0M0S500F",
+          "type": "dur"
+        }
+      },
+      "text": "P0D0H0M0S500F",
+      "type": "dur",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {}
+    }
+  },
+  "speechRecCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "speechRecEngine": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "",
+        "type": "str"
+      }
+    },
+    "text": "",
+    "type": "str",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "supportedLanguageOptions": [
+    {
+      "fallbackOverride": "",
+      "language": "en-AU",
+      "languageSkill": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "",
+            "type": "lac"
+          }
+        },
+        "text": "",
+        "type": "lac",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    }
+  ],
+  "flowMetaData": {
+    "features": [],
+    "flowDocumentVersion": "1.1",
+    "minimumServerVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "startAction": "5d3c0110-1a23-4e3e-81b7-28bb23d89a55",
+      "trackingId": 13,
+      "id": "5015627b-0e86-4444-9e0e-293300295c7d",
+      "name": "Task to External Number",
+      "__type": "Task",
+      "paths": [
+        {
+          "label": "Default",
+          "outputId": "__DEFAULT__"
+        }
+      ],
+      "actionList": [
+        {
+          "trackingId": 26,
+          "id": "2e12d441-8b58-4710-a2ad-fcc36d8ea060",
+          "name": "Disconnect",
+          "__type": "DisconnectAction"
+        },
+        {
+          "verification": false,
+          "nextAction": "2e12d441-8b58-4710-a2ad-fcc36d8ea060",
+          "trackingId": 27,
+          "id": "5d3c0110-1a23-4e3e-81b7-28bb23d89a55",
+          "name": "Collect Input",
+          "__type": "CollectInputAction",
+          "interDigitTimeout": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "dur"
+              }
+            },
+            "text": "",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "noEntryTimeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H0M15S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H0M15S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1,
+              "isOverride": true
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMax": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "20",
+                "type": "int"
+              }
+            },
+            "text": "20",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMin": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "1",
+                "type": "int"
+              }
+            },
+            "text": "1",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "nextActionId": "7ea67916-db9b-4173-916b-69d823e987c2",
+              "label": "Success",
+              "outputId": "__SUCCESS__"
+            },
+            {
+              "nextActionId": "8833d1bb-8ce3-471d-8dca-6cef6027efd2",
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "prompts": {
+            "defaultAudio": {
+              "config": {
+                "ToAudioTTS": {
+                  "pos": 1,
+                  "text": "ToAudioTTS(\"PHONE NUMBER PLEASE!!!\")",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 12,
+                        "text": "PHONE NUMBER PLEASE!!!",
+                        "type": "str"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioTTS(\"PHONE NUMBER PLEASE!!!\")",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "PHONE NUMBER PLEASE!!!"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "resultData": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Task.ExternalNumber",
+                "type": "str",
+                "val": "0d5981c0-2eab-40e7-9401-949b8ac738e1"
+              }
+            },
+            "text": "Task.ExternalNumber",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 2
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "0d5981c0-2eab-40e7-9401-949b8ac738e1",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Task.ExternalNumber"
+                }
+              ]
+            }
+          },
+          "verificationPrompts": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": []
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "nextAction": "5a2ec856-1af4-4400-a570-ea4c6bb4cb03",
+          "trackingId": 28,
+          "id": "7ea67916-db9b-4173-916b-69d823e987c2",
+          "name": "Play Audio",
+          "__type": "PlayAudioAction",
+          "prompts": {
+            "defaultAudio": {
+              "config": {
+                "Append": {
+                  "pos": 1,
+                  "text": "Append(ToAudioTTS(\"YOU HAVE ENTERED.\"), ToAudioPhoneNumber(Task.ExternalNumber))",
+                  "operands": [
+                    {
+                      "ToAudioTTS": {
+                        "pos": 8,
+                        "text": "ToAudioTTS(\"YOU HAVE ENTERED.\")",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 19,
+                              "text": "YOU HAVE ENTERED.",
+                              "type": "str"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioPhoneNumber": {
+                        "pos": 41,
+                        "text": "ToAudioPhoneNumber(Task.ExternalNumber)",
+                        "operands": [
+                          {
+                            "ref": {
+                              "pos": 60,
+                              "text": "Task.ExternalNumber",
+                              "type": "str",
+                              "val": "0d5981c0-2eab-40e7-9401-949b8ac738e1"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "Append(ToAudioTTS(\"YOU HAVE ENTERED.\"), ToAudioPhoneNumber(Task.ExternalNumber))",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "YOU HAVE ENTERED."
+                  },
+                  {
+                    "type": 2,
+                    "expressionFormat": "ToAudioPhoneNumber(%s)",
+                    "functionOverloadIds": [
+                      "Audio_ONE ToAudioPhoneNumber(String_ONE)"
+                    ],
+                    "variableId": "0d5981c0-2eab-40e7-9401-949b8ac738e1",
+                    "parameter": "Task.ExternalNumber"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "0d5981c0-2eab-40e7-9401-949b8ac738e1",
+                    "type": "str",
+                    "isSysRef": false,
+                    "name": "Task.ExternalNumber"
+                  }
+                ]
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 31,
+          "id": "8833d1bb-8ce3-471d-8dca-6cef6027efd2",
+          "name": "Disconnect",
+          "__type": "DisconnectAction"
+        },
+        {
+          "trackingId": 32,
+          "id": "5a2ec856-1af4-4400-a570-ea4c6bb4cb03",
+          "name": "Transfer to Number",
+          "__type": "TransferExternalAction",
+          "externalNumber": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Task.ExternalNumber",
+                "type": "str",
+                "val": "0d5981c0-2eab-40e7-9401-949b8ac738e1"
+              }
+            },
+            "text": "Task.ExternalNumber",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "0d5981c0-2eab-40e7-9401-949b8ac738e1",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Task.ExternalNumber"
+                }
+              ]
+            }
+          },
+          "paths": [
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "preTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "ToAudio": {
+                  "pos": 1,
+                  "text": "ToAudio(Prompt.AUTransferingyounow)",
+                  "operands": [
+                    {
+                      "ref": {
+                        "pos": 9,
+                        "text": "Prompt.AUTransferingyounow",
+                        "type": "pmt",
+                        "val": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudio(Prompt.AUTransferingyounow)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 1,
+                    "name": "Prompt.AUTransferingyounow",
+                    "isSystem": false,
+                    "expressionName": "Prompt.AUTransferingyounow",
+                    "parameter": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7",
+                    "type": "pmt",
+                    "isSysRef": false,
+                    "name": "Prompt.AUTransferingyounow"
+                  }
+                ]
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "failureTransferAudio": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        }
+      ],
+      "variables": [
+        {
+          "enableInitialValue": false,
+          "id": "0d5981c0-2eab-40e7-9401-949b8ac738e1",
+          "isCollection": false,
+          "isInternal": false,
+          "isOutput": false,
+          "isInput": false,
+          "isSecure": false,
+          "name": "Task.ExternalNumber",
+          "version": "1.0",
+          "__type": "StringVariable",
+          "initialValue": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        }
+      ]
+    },
+    {
+      "startAction": "fbd57c5f-aef2-4d8d-805d-8819cf19397d",
+      "trackingId": 34,
+      "id": "f2315796-27d6-4f3f-b0fe-132de649cffb",
+      "name": "Transfer to User Extension",
+      "__type": "Task",
+      "paths": [
+        {
+          "label": "Default",
+          "outputId": "__DEFAULT__"
+        }
+      ],
+      "actionList": [
+        {
+          "verification": false,
+          "nextAction": "2a6553a2-88ea-4e43-98c5-b73969bbab17",
+          "trackingId": 35,
+          "id": "fbd57c5f-aef2-4d8d-805d-8819cf19397d",
+          "name": "Collect Input",
+          "__type": "CollectInputAction",
+          "interDigitTimeout": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "dur"
+              }
+            },
+            "text": "",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "noEntryTimeout": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "dur"
+              }
+            },
+            "text": "",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMax": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "4",
+                "type": "int"
+              }
+            },
+            "text": "4",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMin": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "1",
+                "type": "int"
+              }
+            },
+            "text": "1",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "nextActionId": "5fbe32e7-1eae-4324-814e-3508c61f0cb4",
+              "label": "Success",
+              "outputId": "__SUCCESS__"
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "prompts": {
+            "defaultAudio": {
+              "config": {
+                "ToAudioTTS": {
+                  "pos": 1,
+                  "text": "ToAudioTTS(\"PLEASE ENTER EXTENSION NUMBER\")",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 12,
+                        "text": "PLEASE ENTER EXTENSION NUMBER",
+                        "type": "str"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioTTS(\"PLEASE ENTER EXTENSION NUMBER\")",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "PLEASE ENTER EXTENSION NUMBER"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "resultData": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Task.Extenstion",
+                "type": "str",
+                "val": "8aee9fcf-3157-4c7e-9a22-98b2906a5648"
+              }
+            },
+            "text": "Task.Extenstion",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 2
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "8aee9fcf-3157-4c7e-9a22-98b2906a5648",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Task.Extenstion"
+                }
+              ]
+            }
+          },
+          "verificationPrompts": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": []
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "nextAction": "31837548-4b2a-4b11-8685-5233e95bb74f",
+          "trackingId": 36,
+          "id": "5fbe32e7-1eae-4324-814e-3508c61f0cb4",
+          "name": "Play Audio",
+          "__type": "PlayAudioAction",
+          "prompts": {
+            "defaultAudio": {
+              "config": {
+                "Append": {
+                  "pos": 1,
+                  "text": "Append(ToAudioTTS(\"YOU HAVE ENTERED\"), ToAudioTTS(Task.Extenstion, Format.String.playChars))",
+                  "operands": [
+                    {
+                      "ToAudioTTS": {
+                        "pos": 8,
+                        "text": "ToAudioTTS(\"YOU HAVE ENTERED\")",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 19,
+                              "text": "YOU HAVE ENTERED",
+                              "type": "str"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioTTS": {
+                        "pos": 40,
+                        "text": "ToAudioTTS(Task.Extenstion, Format.String.playChars)",
+                        "operands": [
+                          {
+                            "ref": {
+                              "pos": 51,
+                              "text": "Task.Extenstion",
+                              "type": "str",
+                              "val": "8aee9fcf-3157-4c7e-9a22-98b2906a5648"
+                            }
+                          },
+                          {
+                            ".": {
+                              "pos": 81,
+                              "text": "Format.String.playChars",
+                              "operands": [
+                                {
+                                  "lit": {
+                                    "pos": 81,
+                                    "text": "stringPlayChars",
+                                    "type": "str"
+                                  }
+                                },
+                                {
+                                  "sysref": {
+                                    "pos": 68,
+                                    "text": "Format.String",
+                                    "type": "stc",
+                                    "val": "__FORMAT_STRING__"
+                                  }
+                                }
+                              ],
+                              "type": "stf"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "Append(ToAudioTTS(\"YOU HAVE ENTERED\"), ToAudioTTS(Task.Extenstion, Format.String.playChars))",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "YOU HAVE ENTERED"
+                  },
+                  {
+                    "type": 2,
+                    "expressionFormat": "ToAudioTTS(%s, Format.String.playChars)",
+                    "functionOverloadIds": [
+                      "Audio_ONE ToAudioTTS(String_ONE,StringFormat_ONE)"
+                    ],
+                    "variableId": "8aee9fcf-3157-4c7e-9a22-98b2906a5648",
+                    "parameter": "Task.Extenstion"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "8aee9fcf-3157-4c7e-9a22-98b2906a5648",
+                    "type": "str",
+                    "isSysRef": false,
+                    "name": "Task.Extenstion"
+                  },
+                  {
+                    "id": "__FORMAT_STRING__",
+                    "type": "stc",
+                    "isSysRef": true,
+                    "name": "Format.String"
+                  }
+                ]
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 37,
+          "id": "31837548-4b2a-4b11-8685-5233e95bb74f",
+          "name": "Transfer to Number",
+          "__type": "TransferExternalAction",
+          "externalNumber": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Task.Extenstion",
+                "type": "str",
+                "val": "8aee9fcf-3157-4c7e-9a22-98b2906a5648"
+              }
+            },
+            "text": "Task.Extenstion",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "8aee9fcf-3157-4c7e-9a22-98b2906a5648",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Task.Extenstion"
+                }
+              ]
+            }
+          },
+          "paths": [
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "preTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "ToAudio": {
+                  "pos": 1,
+                  "text": "ToAudio(Prompt.AUTransferingyounow)",
+                  "operands": [
+                    {
+                      "ref": {
+                        "pos": 9,
+                        "text": "Prompt.AUTransferingyounow",
+                        "type": "pmt",
+                        "val": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudio(Prompt.AUTransferingyounow)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 1,
+                    "name": "Prompt.AUTransferingyounow",
+                    "isSystem": false,
+                    "expressionName": "Prompt.AUTransferingyounow",
+                    "parameter": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "25fa2cb7-8156-46fc-ac0e-86e2b3b8d4f7",
+                    "type": "pmt",
+                    "isSysRef": false,
+                    "name": "Prompt.AUTransferingyounow"
+                  }
+                ]
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "failureTransferAudio": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 38,
+          "id": "2a6553a2-88ea-4e43-98c5-b73969bbab17",
+          "name": "Disconnect",
+          "__type": "DisconnectAction"
+        }
+      ],
+      "variables": [
+        {
+          "enableInitialValue": false,
+          "id": "8aee9fcf-3157-4c7e-9a22-98b2906a5648",
+          "isCollection": false,
+          "isInternal": false,
+          "isOutput": false,
+          "isInput": false,
+          "isSecure": false,
+          "name": "Task.Extenstion",
+          "version": "1.0",
+          "__type": "StringVariable",
+          "initialValue": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        }
+      ]
+    },
+    {
+      "startAction": "b3676570-6a14-44f4-abc5-7729ba809fb5",
+      "trackingId": 40,
+      "id": "357de72c-cb59-4d3d-9181-8659c5ef8b1e",
+      "name": "Transfer to User Voicemail",
+      "__type": "Task",
+      "paths": [
+        {
+          "label": "Default",
+          "outputId": "__DEFAULT__"
+        }
+      ],
+      "actionList": [
+        {
+          "verification": false,
+          "nextAction": "6bfd3eb0-f466-4f8a-88d0-431713df562a",
+          "trackingId": 41,
+          "id": "b3676570-6a14-44f4-abc5-7729ba809fb5",
+          "name": "Collect Input",
+          "__type": "CollectInputAction",
+          "interDigitTimeout": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "dur"
+              }
+            },
+            "text": "",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "noEntryTimeout": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "dur"
+              }
+            },
+            "text": "",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMax": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "2",
+                "type": "int"
+              }
+            },
+            "text": "2",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "numberOfDigitsMin": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "1",
+                "type": "int"
+              }
+            },
+            "text": "1",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "nextActionId": "ea75e468-bdb5-445c-8a74-4d06c472244c",
+              "label": "Success",
+              "outputId": "__SUCCESS__"
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "prompts": {
+            "defaultAudio": {
+              "config": {
+                "Append": {
+                  "pos": 1,
+                  "text": "Append(ToAudioTTS(\"PRESS ONE TO LEAVE VOICEMAIL FOR PRIYESH.\"), ToAudioBlank(500), ToAudioTTS(\"PRESS TWO TO LEAVE VOICEMAIL FOR RICHARD.\"), ToAudioBlank(500), ToAudioTTS(\"PRESS THREE TO LEAVE VOICEMAIL FOR SZE.\"))",
+                  "operands": [
+                    {
+                      "ToAudioTTS": {
+                        "pos": 8,
+                        "text": "ToAudioTTS(\"PRESS ONE TO LEAVE VOICEMAIL FOR PRIYESH.\")",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 19,
+                              "text": "PRESS ONE TO LEAVE VOICEMAIL FOR PRIYESH.",
+                              "type": "str"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioBlank": {
+                        "pos": 65,
+                        "text": "ToAudioBlank(500)",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 78,
+                              "text": "500",
+                              "type": "int"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioTTS": {
+                        "pos": 84,
+                        "text": "ToAudioTTS(\"PRESS TWO TO LEAVE VOICEMAIL FOR RICHARD.\")",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 95,
+                              "text": "PRESS TWO TO LEAVE VOICEMAIL FOR RICHARD.",
+                              "type": "str"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioBlank": {
+                        "pos": 141,
+                        "text": "ToAudioBlank(500)",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 154,
+                              "text": "500",
+                              "type": "int"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "ToAudioTTS": {
+                        "pos": 160,
+                        "text": "ToAudioTTS(\"PRESS THREE TO LEAVE VOICEMAIL FOR SZE.\")",
+                        "operands": [
+                          {
+                            "lit": {
+                              "pos": 171,
+                              "text": "PRESS THREE TO LEAVE VOICEMAIL FOR SZE.",
+                              "type": "str"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "Append(ToAudioTTS(\"PRESS ONE TO LEAVE VOICEMAIL FOR PRIYESH.\"), ToAudioBlank(500), ToAudioTTS(\"PRESS TWO TO LEAVE VOICEMAIL FOR RICHARD.\"), ToAudioBlank(500), ToAudioTTS(\"PRESS THREE TO LEAVE VOICEMAIL FOR SZE.\"))",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "PRESS ONE TO LEAVE VOICEMAIL FOR PRIYESH."
+                  },
+                  {
+                    "parameter": 500,
+                    "type": 4
+                  },
+                  {
+                    "type": 0,
+                    "parameter": "PRESS TWO TO LEAVE VOICEMAIL FOR RICHARD."
+                  },
+                  {
+                    "parameter": 500,
+                    "type": 4
+                  },
+                  {
+                    "type": 0,
+                    "parameter": "PRESS THREE TO LEAVE VOICEMAIL FOR SZE."
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "resultData": {
+            "config": {
+              "ref": {
+                "pos": 1,
+                "text": "Task.User",
+                "type": "str",
+                "val": "37230c1b-f745-4def-86ac-167aa2c959db"
+              }
+            },
+            "text": "Task.User",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 2
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "37230c1b-f745-4def-86ac-167aa2c959db",
+                  "type": "str",
+                  "isSysRef": false,
+                  "name": "Task.User"
+                }
+              ]
+            }
+          },
+          "verificationPrompts": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": []
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "switchStyle": 0,
+          "trackingId": 42,
+          "id": "ea75e468-bdb5-445c-8a74-4d06c472244c",
+          "name": "Switch",
+          "__type": "SwitchAction",
+          "expression": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "any"
+              }
+            },
+            "text": "",
+            "type": "any",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {}
+          },
+          "cases": [
+            {
+              "name": "Case 1",
+              "value": {
+                "config": {
+                  "If": {
+                    "pos": 1,
+                    "text": "If(Task.User == \"1\", true, false)",
+                    "operands": [
+                      {
+                        "==": {
+                          "pos": 14,
+                          "text": "Task.User == \"1\"",
+                          "operands": [
+                            {
+                              "ref": {
+                                "pos": 4,
+                                "text": "Task.User",
+                                "type": "str",
+                                "val": "37230c1b-f745-4def-86ac-167aa2c959db"
+                              }
+                            },
+                            {
+                              "lit": {
+                                "pos": 17,
+                                "text": "1",
+                                "type": "str"
+                              }
+                            }
+                          ],
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 21,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 26,
+                          "text": "false",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "bln"
+                  }
+                },
+                "text": "if(Task.User == \"1\",true,false)",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "37230c1b-f745-4def-86ac-167aa2c959db",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Task.User"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Case 2",
+              "value": {
+                "config": {
+                  "If": {
+                    "pos": 1,
+                    "text": "If(Task.User == \"2\", true, false)",
+                    "operands": [
+                      {
+                        "==": {
+                          "pos": 14,
+                          "text": "Task.User == \"2\"",
+                          "operands": [
+                            {
+                              "ref": {
+                                "pos": 4,
+                                "text": "Task.User",
+                                "type": "str",
+                                "val": "37230c1b-f745-4def-86ac-167aa2c959db"
+                              }
+                            },
+                            {
+                              "lit": {
+                                "pos": 17,
+                                "text": "2",
+                                "type": "str"
+                              }
+                            }
+                          ],
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 21,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 26,
+                          "text": "false",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "bln"
+                  }
+                },
+                "text": "if(Task.User == \"2\",true,false)",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "37230c1b-f745-4def-86ac-167aa2c959db",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Task.User"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Case 3",
+              "value": {
+                "config": {
+                  "If": {
+                    "pos": 1,
+                    "text": "If(Task.User == \"3\", true, false)",
+                    "operands": [
+                      {
+                        "==": {
+                          "pos": 14,
+                          "text": "Task.User == \"3\"",
+                          "operands": [
+                            {
+                              "ref": {
+                                "pos": 4,
+                                "text": "Task.User",
+                                "type": "str",
+                                "val": "37230c1b-f745-4def-86ac-167aa2c959db"
+                              }
+                            },
+                            {
+                              "lit": {
+                                "pos": 17,
+                                "text": "3",
+                                "type": "str"
+                              }
+                            }
+                          ],
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 21,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 26,
+                          "text": "false",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "bln"
+                  }
+                },
+                "text": "if(Task.User == \"3\",true,false)",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 0
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "37230c1b-f745-4def-86ac-167aa2c959db",
+                      "type": "str",
+                      "isSysRef": false,
+                      "name": "Task.User"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "paths": [
+            {
+              "nextActionId": "cfd6c4d5-f473-461d-beac-b37d5af1d38c",
+              "label": "Case 1",
+              "outputId": "__1__"
+            },
+            {
+              "nextActionId": "edd7bcef-660f-4088-bda8-24b480fec091",
+              "label": "Case 2",
+              "outputId": "__2__"
+            },
+            {
+              "nextActionId": "1ca82208-4ce3-48dd-8ee5-261b21be7bd8",
+              "label": "Case 3",
+              "outputId": "__3__"
+            },
+            {
+              "label": "Default",
+              "outputId": "__DEFAULT__"
+            }
+          ]
+        },
+        {
+          "trackingId": 43,
+          "id": "cfd6c4d5-f473-461d-beac-b37d5af1d38c",
+          "name": "Transfer to Voicemail",
+          "__type": "TransferVoicemailAction",
+          "transferTarget": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Priyesh Gunasekera",
+                "type": "usr",
+                "username": "priyesh.gunasekera@employsure.com.au",
+                "val": "ce2ea24c-5ebb-4643-898d-3a30ebfed0c7"
+              }
+            },
+            "text": "Priyesh Gunasekera",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "preTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "ToAudioBlank": {
+                  "pos": 1,
+                  "text": "ToAudioBlank(500)",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 14,
+                        "text": "500",
+                        "type": "int"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioBlank(500)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "parameter": 500,
+                    "type": 4
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "failureTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 44,
+          "id": "edd7bcef-660f-4088-bda8-24b480fec091",
+          "name": "Transfer to Voicemail",
+          "__type": "TransferVoicemailAction",
+          "transferTarget": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Richard Dib",
+                "type": "usr",
+                "username": "richard.dib@employsure.com.au",
+                "val": "d234c920-9fb3-4e6c-90ee-c0a1740805cd"
+              }
+            },
+            "text": "Richard Dib",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "preTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "ToAudioBlank": {
+                  "pos": 1,
+                  "text": "ToAudioBlank(500)",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 14,
+                        "text": "500",
+                        "type": "int"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioBlank(500)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "parameter": 500,
+                    "type": 4
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "failureTransferAudio": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 45,
+          "id": "1ca82208-4ce3-48dd-8ee5-261b21be7bd8",
+          "name": "Transfer to Voicemail",
+          "__type": "TransferVoicemailAction",
+          "transferTarget": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Sze Kong Lee",
+                "type": "usr",
+                "username": "sze.lee@employsure.com.au",
+                "val": "31252056-f9df-41c9-89b5-5ce745dc4a1a"
+              }
+            },
+            "text": "Sze Kong Lee",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          },
+          "paths": [
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__"
+            }
+          ],
+          "preTransferAudio": {
+            "defaultAudio": {
+              "config": {
+                "ToAudioBlank": {
+                  "pos": 1,
+                  "text": "ToAudioBlank(500)",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 14,
+                        "text": "500",
+                        "type": "int"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioBlank(500)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "parameter": 500,
+                    "type": 4
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          },
+          "failureTransferAudio": {
+            "defaultAudio": {
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              }
+            },
+            "cases": [],
+            "bargeIn": "Enabled",
+            "bargeInDuration": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "P0D0H0M0S500F",
+                  "type": "dur"
+                }
+              },
+              "text": "P0D0H0M0S500F",
+              "type": "dur",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            }
+          }
+        },
+        {
+          "trackingId": 46,
+          "id": "6bfd3eb0-f466-4f8a-88d0-431713df562a",
+          "name": "Disconnect",
+          "__type": "DisconnectAction"
+        }
+      ],
+      "variables": [
+        {
+          "enableInitialValue": false,
+          "id": "37230c1b-f745-4def-86ac-167aa2c959db",
+          "isCollection": false,
+          "isInternal": false,
+          "isOutput": false,
+          "isInput": false,
+          "isSecure": false,
+          "name": "Task.User",
+          "version": "1.0",
+          "__type": "StringVariable",
+          "initialValue": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {}
+          }
+        }
+      ]
+    },
+    {
+      "defaultMenuChoice": "cc36580d-ea35-4252-aa02-9e543040276b",
+      "trackingId": 10,
+      "id": "7580b9e5-1f6f-411c-a9c0-84fdc8d449bd",
+      "name": "Main Menu",
+      "uiMetaData": {},
+      "__type": "Menu",
+      "extensionDialingDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      },
+      "invalidSpeechRecPromptsList": [],
+      "menuChoiceList": [
+        {
+          "globalSpeech": false,
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "cc36580d-ea35-4252-aa02-9e543040276b",
+          "name": "Transfer to Base Queue",
+          "action": {
+            "inQueueFlowId": "037f2416-0bfc-4172-afe1-18a8989cae7e",
+            "inQueueFlowName": "Default In-Queue Flow",
+            "enableInQueueFlow": true,
+            "useDefaultHandling": true,
+            "trackingId": 12,
+            "id": "c07a097d-78fc-4654-8c68-b2c6b6d52f2b",
+            "name": "Transfer to Base Queue",
+            "__type": "TransferPureMatchAction",
+            "languageSkill": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "lac"
+                }
+              },
+              "text": "",
+              "type": "lac",
+              "uiMetaData": {
+                "mode": 0
+              },
+              "metaData": {}
+            },
+            "priority": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "0",
+                  "type": "int"
+                }
+              },
+              "text": "0",
+              "type": "int",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {}
+            },
+            "queues": [
+              {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "Base_Q",
+                    "type": "que",
+                    "val": "fe8ec1d3-b69e-403b-b9f0-21ab031c7414"
+                  }
+                },
+                "text": "Base_Q",
+                "type": "que",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {}
+              }
+            ],
+            "skills": [],
+            "paths": [
+              {
+                "label": "Failure",
+                "outputId": "__FAILURE__"
+              }
+            ],
+            "preTransferAudio": {
+              "defaultAudio": {
+                "config": {
+                  "ToAudioTTS": {
+                    "pos": 1,
+                    "text": "ToAudioTTS(\"Transferring now\")",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 12,
+                          "text": "Transferring now",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                "text": "ToAudioTTS(\"Transferring now\")",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": [
+                    {
+                      "type": 0,
+                      "parameter": "Transferring now"
+                    }
+                  ],
+                  "customExpressionMode": false
+                },
+                "metaData": {}
+              },
+              "cases": [],
+              "bargeIn": "Enabled",
+              "bargeInDuration": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "P0D0H0M0S500F",
+                    "type": "dur"
+                  }
+                },
+                "text": "P0D0H0M0S500F",
+                "type": "dur",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {}
+              }
+            },
+            "failureTransferAudio": {
+              "defaultAudio": {
+                "text": "",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": []
+                }
+              },
+              "cases": [],
+              "bargeIn": "Enabled",
+              "bargeInDuration": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "P0D0H0M0S500F",
+                    "type": "dur"
+                  }
+                },
+                "text": "P0D0H0M0S500F",
+                "type": "dur",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {}
+              }
+            }
+          },
+          "digit": 1
+        },
+        {
+          "globalSpeech": false,
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "e3679fdd-966a-4f54-91c4-051452c99d08",
+          "name": "Task to External Number",
+          "action": {
+            "taskReference": "5015627b-0e86-4444-9e0e-293300295c7d",
+            "trackingId": 16,
+            "id": "a043448b-8060-48c4-93f7-7949348e8565",
+            "name": "Task to External Number",
+            "__type": "TaskAction"
+          },
+          "digit": 2
+        },
+        {
+          "globalSpeech": false,
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "3076a0d5-9bc6-4881-9bba-c10f51ef332b",
+          "name": "Transfer to User Extension",
+          "action": {
+            "taskReference": "f2315796-27d6-4f3f-b0fe-132de649cffb",
+            "trackingId": 33,
+            "id": "735591a5-6c85-4986-ab15-e2975b5d94c3",
+            "name": "Transfer to User Extension",
+            "__type": "TaskAction"
+          },
+          "digit": 3
+        },
+        {
+          "globalSpeech": false,
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "1b5d5f52-923b-4a33-880a-29c7166bb042",
+          "name": "Transfer to User Voicemail",
+          "action": {
+            "taskReference": "357de72c-cb59-4d3d-9181-8659c5ef8b1e",
+            "trackingId": 39,
+            "id": "bbd89d55-1c6c-4cb5-a395-4d7100be8722",
+            "name": "Transfer to User Voicemail",
+            "__type": "TaskAction"
+          },
+          "digit": 4
+        }
+      ],
+      "promptRepeatCount": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "prompts": {
+        "defaultAudio": {
+          "config": {
+            "Append": {
+              "pos": 1,
+              "text": "Append(ToAudioTTS(\"PRESS ONE FOR QUEUE AGENTS\"), ToAudioBlank(100), ToAudioTTS(\"PRESS TWO FOR EXTERNAL NUMBER TRANSFER.\"), ToAudioBlank(100), ToAudioTTS(\"PRESS THREE FOR USER EXTENSION\"), ToAudioBlank(100), ToAudioTTS(\"PRESS FOUR TO LEAVE VOICEMAIL\"))",
+              "operands": [
+                {
+                  "ToAudioTTS": {
+                    "pos": 8,
+                    "text": "ToAudioTTS(\"PRESS ONE FOR QUEUE AGENTS\")",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 19,
+                          "text": "PRESS ONE FOR QUEUE AGENTS",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioBlank": {
+                    "pos": 50,
+                    "text": "ToAudioBlank(100)",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 63,
+                          "text": "100",
+                          "type": "int"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioTTS": {
+                    "pos": 69,
+                    "text": "ToAudioTTS(\"PRESS TWO FOR EXTERNAL NUMBER TRANSFER.\")",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 80,
+                          "text": "PRESS TWO FOR EXTERNAL NUMBER TRANSFER.",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioBlank": {
+                    "pos": 124,
+                    "text": "ToAudioBlank(100)",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 137,
+                          "text": "100",
+                          "type": "int"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioTTS": {
+                    "pos": 143,
+                    "text": "ToAudioTTS(\"PRESS THREE FOR USER EXTENSION\")",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 154,
+                          "text": "PRESS THREE FOR USER EXTENSION",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioBlank": {
+                    "pos": 189,
+                    "text": "ToAudioBlank(100)",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 202,
+                          "text": "100",
+                          "type": "int"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "ToAudioTTS": {
+                    "pos": 208,
+                    "text": "ToAudioTTS(\"PRESS FOUR TO LEAVE VOICEMAIL\")",
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 219,
+                          "text": "PRESS FOUR TO LEAVE VOICEMAIL",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                }
+              ],
+              "type": "aud"
+            }
+          },
+          "text": "Append(ToAudioTTS(\"PRESS ONE FOR QUEUE AGENTS\"), ToAudioBlank(100), ToAudioTTS(\"PRESS TWO FOR EXTERNAL NUMBER TRANSFER.\"), ToAudioBlank(100), ToAudioTTS(\"PRESS THREE FOR USER EXTENSION\"), ToAudioBlank(100), ToAudioTTS(\"PRESS FOUR TO LEAVE VOICEMAIL\"))",
+          "type": "aud",
+          "uiMetaData": {
+            "sequenceItems": [
+              {
+                "type": 0,
+                "parameter": "PRESS ONE FOR QUEUE AGENTS"
+              },
+              {
+                "parameter": 100,
+                "type": 4
+              },
+              {
+                "type": 0,
+                "parameter": "PRESS TWO FOR EXTERNAL NUMBER TRANSFER."
+              },
+              {
+                "parameter": 100,
+                "type": 4
+              },
+              {
+                "type": 0,
+                "parameter": "PRESS THREE FOR USER EXTENSION"
+              },
+              {
+                "parameter": 100,
+                "type": 4
+              },
+              {
+                "type": 0,
+                "parameter": "PRESS FOUR TO LEAVE VOICEMAIL"
+              }
+            ],
+            "customExpressionMode": false,
+            "optional": true
+          },
+          "metaData": {}
+        },
+        "cases": [],
+        "bargeIn": "Enabled",
+        "bargeInDuration": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "P0D0H0M0S500F",
+              "type": "dur"
+            }
+          },
+          "text": "P0D0H0M0S500F",
+          "type": "dur",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {}
+        }
+      },
+      "speechRecMinConfidence": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 0
+        },
+        "metaData": {}
+      },
+      "useExtensionDialing": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "bln"
+          }
+        },
+        "text": "",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {}
+      }
+    }
+  ],
+  "variables": []
+}

@@ -1,0 +1,1798 @@
+{
+  "defaultLanguage": "en-AU",
+  "description": "DataCapture",
+  "initialSequence": "1abb5f62-349f-4b8b-a4bc-ccc4fde220b1",
+  "name": "DataCapture",
+  "nextTrackingNumber": 17,
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": [],
+    "dataTableTables": [
+      {
+        "id": "e982acd5-8b28-4cc0-993b-e628d7d8f8e0",
+        "name": "Abandoned Calls - Sales",
+        "schema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Abandoned Calls - Sales",
+          "description": "Data for abandoned calls for Sales that will create a callback and lead in Salesforce",
+          "type": "object",
+          "required": [
+            "key"
+          ],
+          "properties": {
+            "key": {
+              "title": "ConversationID",
+              "type": "string",
+              "$id": "/properties/key",
+              "displayOrder": 0,
+              "minLength": 1,
+              "maxLength": 256,
+              "name": "key",
+              "required": true
+            },
+            "QueueID": {
+              "title": "QueueID",
+              "type": "string",
+              "$id": "/properties/QueueID",
+              "displayOrder": 1,
+              "minLength": 0,
+              "maxLength": 262144,
+              "name": "QueueID",
+              "required": false
+            },
+            "LeadID": {
+              "title": "LeadID",
+              "type": "string",
+              "$id": "/properties/LeadID",
+              "displayOrder": 2,
+              "minLength": 0,
+              "maxLength": 262144,
+              "name": "LeadID",
+              "required": false
+            }
+          },
+          "additionalProperties": false,
+          "datatableId": "e982acd5-8b28-4cc0-993b-e628d7d8f8e0"
+        },
+        "result": "ok"
+      }
+    ],
+    "actionServiceActions": [
+      {
+        "id": "custom_-_ef552d5a-1593-4f4b-9b84-e27c792b1e24",
+        "name": "Insert Data Table Row - Abandoned Calls - Sales",
+        "category": "Genesys Cloud Data Actions",
+        "contract": {
+          "input": {
+            "inputSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "A Row update",
+                "type": "object",
+                "required": [
+                  "Key"
+                ],
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": true
+                  },
+                  "QueueID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "QueueID",
+                    "required": false
+                  },
+                  "LeadID": {
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "output": {
+            "errorSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "ErrorBody",
+                "description": "Detailed information about an error response.",
+                "type": "object",
+                "required": [
+                  "errorCode",
+                  "status",
+                  "userMessage"
+                ],
+                "properties": {
+                  "errors": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "name": "errors",
+                    "required": false
+                  },
+                  "errorCode": {
+                    "description": "A code unique to this error.",
+                    "type": "string",
+                    "name": "errorCode",
+                    "required": false
+                  },
+                  "status": {
+                    "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                    "type": "integer",
+                    "name": "status",
+                    "required": false
+                  },
+                  "correlationId": {
+                    "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                    "type": "string",
+                    "name": "correlationId",
+                    "required": false
+                  },
+                  "entityId": {
+                    "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityId",
+                    "required": false
+                  },
+                  "entityName": {
+                    "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityName",
+                    "required": false
+                  },
+                  "userMessage": {
+                    "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                    "type": "string",
+                    "name": "userMessage",
+                    "required": false
+                  },
+                  "userParamsMessage": {
+                    "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                    "type": "string",
+                    "name": "userParamsMessage",
+                    "required": false
+                  },
+                  "userParams.key": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Key name of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.key",
+                    "required": false
+                  },
+                  "userParams.value": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Value of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.value",
+                    "required": false
+                  },
+                  "details.errorCode": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.errorCode",
+                    "required": false
+                  },
+                  "details.fieldName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.fieldName",
+                    "required": false
+                  },
+                  "details.entityId": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityId",
+                    "required": false
+                  },
+                  "details.entityName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityName",
+                    "required": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "successSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "Row update",
+                "description": "returns the new row",
+                "type": "object",
+                "properties": {
+                  "Key": {
+                    "description": "Tarjeta",
+                    "type": "string",
+                    "name": "Key",
+                    "required": false
+                  },
+                  "QueueID": {
+                    "description": "Telefono origen",
+                    "type": "string",
+                    "name": "QueueID",
+                    "required": false
+                  },
+                  "LeadID": {
+                    "type": "string",
+                    "name": "LeadID",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "result": "ok",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Row update",
+          "description": "A Row update",
+          "type": "object",
+          "required": [
+            "Key"
+          ],
+          "properties": {
+            "Key": {
+              "description": "Tarjeta",
+              "type": "string",
+              "name": "Key",
+              "required": true
+            },
+            "QueueID": {
+              "description": "Telefono origen",
+              "type": "string",
+              "name": "QueueID",
+              "required": false
+            },
+            "LeadID": {
+              "type": "string",
+              "name": "LeadID",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "successSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Row update",
+          "description": "returns the new row",
+          "type": "object",
+          "properties": {
+            "Key": {
+              "description": "Tarjeta",
+              "type": "string",
+              "name": "Key",
+              "required": false
+            },
+            "QueueID": {
+              "description": "Telefono origen",
+              "type": "string",
+              "name": "QueueID",
+              "required": false
+            },
+            "LeadID": {
+              "type": "string",
+              "name": "LeadID",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "errorSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "ErrorBody",
+          "description": "Detailed information about an error response.",
+          "type": "object",
+          "required": [
+            "errorCode",
+            "status",
+            "userMessage"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "name": "errors",
+              "required": false
+            },
+            "errorCode": {
+              "description": "A code unique to this error.",
+              "type": "string",
+              "name": "errorCode",
+              "required": false
+            },
+            "status": {
+              "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+              "type": "integer",
+              "name": "status",
+              "required": false
+            },
+            "correlationId": {
+              "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+              "type": "string",
+              "name": "correlationId",
+              "required": false
+            },
+            "entityId": {
+              "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityId",
+              "required": false
+            },
+            "entityName": {
+              "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityName",
+              "required": false
+            },
+            "userMessage": {
+              "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+              "type": "string",
+              "name": "userMessage",
+              "required": false
+            },
+            "userParamsMessage": {
+              "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+              "type": "string",
+              "name": "userParamsMessage",
+              "required": false
+            },
+            "userParams.key": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Key name of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.key",
+              "required": false
+            },
+            "userParams.value": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Value of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.value",
+              "required": false
+            },
+            "details.errorCode": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.errorCode",
+              "required": false
+            },
+            "details.fieldName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.fieldName",
+              "required": false
+            },
+            "details.entityId": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityId",
+              "required": false
+            },
+            "details.entityName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityName",
+              "required": false
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ]
+  },
+  "supportedLanguages": [
+    "en-AU"
+  ],
+  "manifest": {
+    "dataTable": [
+      {
+        "name": "Abandoned Calls - Sales",
+        "id": "e982acd5-8b28-4cc0-993b-e628d7d8f8e0",
+        "context": [
+          {
+            "actionName": "Data Table Lookup",
+            "id": "d99996eb-e346-44b2-89dd-675e302061ea",
+            "name": "Data Table Lookup"
+          }
+        ]
+      }
+    ],
+    "dataAction": [
+      {
+        "name": "Insert Data Table Row - Abandoned Calls - Sales",
+        "id": "custom_-_ef552d5a-1593-4f4b-9b84-e27c792b1e24",
+        "context": [
+          {
+            "actionName": "Call Data Action",
+            "id": "130940b1-3eff-4411-bfac-8f93ff3cfe58",
+            "name": "Call Data Action"
+          }
+        ]
+      }
+    ],
+    "ttsEngine": [
+      {
+        "name": "Genesys TTS",
+        "id": "genesys",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "ttsVoice": [
+      {
+        "name": "Kandyce",
+        "id": "genesys/Kandyce",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-AU"
+      }
+    ],
+    "userPrompt": [],
+    "systemPrompt": []
+  },
+  "type": "inboundcall",
+  "isSecure": false,
+  "debugSettings": {},
+  "disableAsr": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "disableAsrCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "errorHandling": {
+    "audio": {
+      "bargeInExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "true",
+            "type": "bln"
+          }
+        },
+        "text": "true",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "flushExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2,
+        "outOfService": true
+      },
+      "defaultAudio": {
+        "config": {
+          "AudioPlaybackOptions": {
+            "pos": 1,
+            "text": "AudioPlaybackOptions(ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\"), true)",
+            "operands": [
+              {
+                "ToAudioTTS": {
+                  "pos": 22,
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 33,
+                        "text": "Sorry, an error occurred. Please try your call again.",
+                        "type": "str"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              {
+                "lit": {
+                  "pos": 91,
+                  "text": "true",
+                  "type": "bln"
+                }
+              }
+            ],
+            "type": "aud"
+          }
+        },
+        "text": "AudioPlaybackOptions(ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\"), true)",
+        "type": "aud",
+        "uiMetaData": {
+          "sequenceItems": [
+            {
+              "type": 0,
+              "parameter": "Sorry, an error occurred. Please try your call again.",
+              "error": ""
+            }
+          ],
+          "customExpressionMode": false,
+          "optional": true
+        },
+        "metaData": {}
+      },
+      "cases": []
+    },
+    "queue": {
+      "config": {
+        "emp": {
+          "pos": 1,
+          "text": "",
+          "type": "que"
+        }
+      },
+      "text": "",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "handlingType": "Disconnect"
+  },
+  "initialPrompts": {
+    "bargeInExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "true",
+          "type": "bln"
+        }
+      },
+      "text": "true",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2
+    },
+    "flushExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "false",
+          "type": "bln"
+        }
+      },
+      "text": "false",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "defaultAudio": {
+      "config": {
+        "AudioPlaybackOptions": {
+          "pos": 1,
+          "text": "AudioPlaybackOptions(Append(ToAudioBlank(100), ToAudioTTS(\"Test\")), true)",
+          "operands": [
+            {
+              "Append": {
+                "pos": 22,
+                "operands": [
+                  {
+                    "ToAudioBlank": {
+                      "pos": 29,
+                      "operands": [
+                        {
+                          "lit": {
+                            "pos": 42,
+                            "text": "100",
+                            "type": "int"
+                          }
+                        }
+                      ],
+                      "type": "aud"
+                    }
+                  },
+                  {
+                    "ToAudioTTS": {
+                      "pos": 48,
+                      "operands": [
+                        {
+                          "lit": {
+                            "pos": 59,
+                            "text": "Test",
+                            "type": "str"
+                          }
+                        }
+                      ],
+                      "type": "aud"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            {
+              "lit": {
+                "pos": 69,
+                "text": "true",
+                "type": "bln"
+              }
+            }
+          ],
+          "type": "aud"
+        }
+      },
+      "text": "AudioPlaybackOptions(Append(ToAudioBlank(100), ToAudioTTS(\"Test\")), true)",
+      "type": "aud",
+      "uiMetaData": {
+        "sequenceItems": [
+          {
+            "parameter": 100,
+            "type": 4,
+            "error": ""
+          },
+          {
+            "type": 0,
+            "error": "",
+            "parameter": "Test"
+          }
+        ],
+        "customExpressionMode": false,
+        "optional": true
+      },
+      "metaData": {}
+    },
+    "cases": []
+  },
+  "speechRecCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "speechRecEngine": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "",
+        "type": "str"
+      }
+    },
+    "text": "",
+    "type": "str",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "suppressRecording": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "defaultSettings": {
+    "PlayAudioOnSilenceAction": {
+      "allowedRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "5",
+            "type": "int"
+          }
+        },
+        "text": "5",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DetectSilenceAction": {
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DataAction": {
+      "processingPrompt": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "pmt"
+          }
+        },
+        "text": "",
+        "type": "pmt",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "CollectInputAction": {
+      "interDigitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M3S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M3S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "noEntryTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M5S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M5S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DialExtensionAction": {
+      "digitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M6S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M6S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferUserAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferExternalAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferGroupAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferFlowSecureAction": {
+      "connTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M15S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M15S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "Menu": {
+      "promptRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "3",
+            "type": "int"
+          }
+        },
+        "text": "3",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M10S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M10S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "extensionDialingDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "true",
+            "type": "bln"
+          }
+        },
+        "text": "true",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "SpeechRec": {
+      "speechRecMinConfidence": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "50",
+            "type": "int"
+          }
+        },
+        "text": "50",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S100F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S100F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S1500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S1500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M20S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M20S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  },
+  "flowMetaData": {
+    "flowDocumentVersion": "1.0",
+    "minimumServerVersion": "1.0",
+    "ttsDataVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "startAction": "d99996eb-e346-44b2-89dd-675e302061ea",
+      "trackingId": 12,
+      "id": "1abb5f62-349f-4b8b-a4bc-ccc4fde220b1",
+      "name": "New Task 1",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "Task",
+      "paths": [
+        {
+          "label": "Default",
+          "outputId": "__DEFAULT__"
+        }
+      ],
+      "actionList": [
+        {
+          "trackingId": 13,
+          "id": "93b559bd-d982-4c94-ab8a-321a4dcd7c41",
+          "name": "Disconnect",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DisconnectAction"
+        },
+        {
+          "datatableId": "e982acd5-8b28-4cc0-993b-e628d7d8f8e0",
+          "datatableName": "Abandoned Calls - Sales",
+          "nextAction": "93b559bd-d982-4c94-ab8a-321a4dcd7c41",
+          "trackingId": 15,
+          "id": "d99996eb-e346-44b2-89dd-675e302061ea",
+          "name": "Data Table Lookup",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataTableLookupAction",
+          "lookupKeyValue": {
+            "config": {
+              "sysref": {
+                "pos": 1,
+                "text": "Call.ConversationId",
+                "type": "str",
+                "val": "__CALL_CONVERSATION_ID__"
+              }
+            },
+            "text": "Call.ConversationId",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "__CALL_CONVERSATION_ID__",
+                  "type": "str",
+                  "isSysRef": true,
+                  "name": "Call.ConversationId"
+                }
+              ]
+            },
+            "version": 2,
+            "name": "lookupKeyValue"
+          },
+          "outputs": [
+            {
+              "name": "QueueID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "errorBindings": [
+            {
+              "name": "errorType",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "errorMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "paths": [
+            {
+              "nextActionId": "130940b1-3eff-4411-bfac-8f93ff3cfe58",
+              "label": "Found",
+              "outputId": "__FOUND__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Not Found",
+              "outputId": "__NOT_FOUND__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "actionName": "Insert Data Table Row - Abandoned Calls - Sales",
+          "actionId": "custom_-_ef552d5a-1593-4f4b-9b84-e27c792b1e24",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "trackingId": 16,
+          "id": "130940b1-3eff-4411-bfac-8f93ff3cfe58",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "inputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "test 1",
+                    "type": "str"
+                  }
+                },
+                "text": "test 1",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "QueueID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "test",
+                    "type": "str"
+                  }
+                },
+                "text": "test",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Key",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "QueueID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "LeadID",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        }
+      ],
+      "variables": []
+    },
+    {
+      "trackingId": 10,
+      "id": "aba92363-9c32-40dd-8434-10489476afb9",
+      "name": "Main Menu",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "Menu",
+      "extensionDialingDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "menuChoiceList": [
+        {
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "1459489d-895d-4323-8c8f-02dd5133dd44",
+          "name": "Disconnect",
+          "action": {
+            "trackingId": 11,
+            "id": "46c837e9-1950-4fd4-89c5-8b7ebffa0af1",
+            "name": "Disconnect",
+            "uiMetaData": {
+              "collapsed": false
+            },
+            "__type": "DisconnectAction"
+          },
+          "digit": 9
+        }
+      ],
+      "promptRepeatCount": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "prompts": {
+        "bargeInExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "true",
+              "type": "bln"
+            }
+          },
+          "text": "true",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2
+        },
+        "flushExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "false",
+              "type": "bln"
+            }
+          },
+          "text": "false",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2,
+          "outOfService": true
+        },
+        "defaultAudio": {
+          "config": {
+            "AudioPlaybackOptions": {
+              "pos": 1,
+              "text": "AudioPlaybackOptions(ToAudioTTS(\"You are at the Main Menu, press 9 to disconnect\"), true)",
+              "operands": [
+                {
+                  "ToAudioTTS": {
+                    "pos": 22,
+                    "operands": [
+                      {
+                        "lit": {
+                          "pos": 33,
+                          "text": "You are at the Main Menu, press 9 to disconnect",
+                          "type": "str"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "lit": {
+                    "pos": 85,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                }
+              ],
+              "type": "aud"
+            }
+          },
+          "text": "AudioPlaybackOptions(ToAudioTTS(\"You are at the Main Menu, press 9 to disconnect\"), true)",
+          "type": "aud",
+          "uiMetaData": {
+            "sequenceItems": [
+              {
+                "type": 0,
+                "parameter": "You are at the Main Menu, press 9 to disconnect",
+                "error": ""
+              }
+            ],
+            "customExpressionMode": false,
+            "optional": true
+          },
+          "metaData": {}
+        },
+        "cases": []
+      },
+      "speechRecMinConfidence": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "bln"
+          }
+        },
+        "text": "",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  ],
+  "supportedLanguageOptions": [
+    {
+      "language": "en-AU",
+      "languageSkill": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "lac"
+          }
+        },
+        "text": "",
+        "type": "lac",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "textToSpeech": {
+        "engine": {
+          "selection": "default",
+          "name": "Genesys TTS",
+          "id": "genesys"
+        },
+        "voice": {
+          "selection": "specific",
+          "name": "Kandyce",
+          "id": "genesys/Kandyce"
+        }
+      }
+    }
+  ],
+  "variables": [],
+  "versionMetaData": {
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow input schema",
+      "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow output schema",
+      "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+}

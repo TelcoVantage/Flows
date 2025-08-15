@@ -1,0 +1,3580 @@
+{
+  "defaultLanguage": "en-AU",
+  "description": "AURecruitment",
+  "initialSequence": "3ede7f79-2d0d-4a77-8670-6506e8763f1b",
+  "name": "AURecruitment",
+  "nextTrackingNumber": 27,
+  "uiMetaData": {
+    "bridgeServerActions": [],
+    "screenPops": [],
+    "voiceXmlOperations": [],
+    "actionServiceActions": [
+      {
+        "id": "custom_-_936d5785-c9da-40b5-b6fa-bca0f58f3750",
+        "name": "Get Available Agent Counts",
+        "category": "Genesys Cloud Data Actions",
+        "contract": {
+          "input": {
+            "inputSchemaFlattened": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "queueId"
+                ],
+                "properties": {
+                  "queueId": {
+                    "type": "string",
+                    "name": "queueId",
+                    "required": true
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "output": {
+            "errorSchemaFlattened": {
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "title": "ErrorBody",
+                "description": "Detailed information about an error response.",
+                "type": "object",
+                "required": [
+                  "errorCode",
+                  "status",
+                  "userMessage"
+                ],
+                "properties": {
+                  "errors": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "name": "errors",
+                    "required": false
+                  },
+                  "errorCode": {
+                    "description": "A code unique to this error.",
+                    "type": "string",
+                    "name": "errorCode",
+                    "required": false
+                  },
+                  "status": {
+                    "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+                    "type": "integer",
+                    "name": "status",
+                    "required": false
+                  },
+                  "correlationId": {
+                    "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+                    "type": "string",
+                    "name": "correlationId",
+                    "required": false
+                  },
+                  "entityId": {
+                    "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityId",
+                    "required": false
+                  },
+                  "entityName": {
+                    "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+                    "type": "string",
+                    "name": "entityName",
+                    "required": false
+                  },
+                  "userMessage": {
+                    "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+                    "type": "string",
+                    "name": "userMessage",
+                    "required": false
+                  },
+                  "userParamsMessage": {
+                    "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+                    "type": "string",
+                    "name": "userParamsMessage",
+                    "required": false
+                  },
+                  "userParams.key": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Key name of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.key",
+                    "required": false
+                  },
+                  "userParams.value": {
+                    "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+                    "type": "array",
+                    "items": {
+                      "description": "Value of userParam  pair.",
+                      "type": "string"
+                    },
+                    "name": "userParams.value",
+                    "required": false
+                  },
+                  "details.errorCode": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.errorCode",
+                    "required": false
+                  },
+                  "details.fieldName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.fieldName",
+                    "required": false
+                  },
+                  "details.entityId": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityId",
+                    "required": false
+                  },
+                  "details.entityName": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "details.entityName",
+                    "required": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "successSchemaFlattened": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "counts": {
+                    "description": "Integer array of on queue agent counts for each routing status. Wrap this variable in a sum() expression to get the total number of on queue agents.",
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "name": "counts",
+                    "required": false
+                  },
+                  "statuses": {
+                    "description": "String array of on queue agent routing statuses for matching up to the counts array.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "name": "statuses",
+                    "required": false
+                  }
+                },
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "result": "ok",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "queueId"
+          ],
+          "properties": {
+            "queueId": {
+              "type": "string",
+              "name": "queueId",
+              "required": true
+            }
+          },
+          "additionalProperties": true
+        },
+        "successSchema": {
+          "type": "object",
+          "properties": {
+            "counts": {
+              "description": "Integer array of on queue agent counts for each routing status. Wrap this variable in a sum() expression to get the total number of on queue agents.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "name": "counts",
+              "required": false
+            },
+            "statuses": {
+              "description": "String array of on queue agent routing statuses for matching up to the counts array.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "statuses",
+              "required": false
+            }
+          },
+          "additionalProperties": true
+        },
+        "errorSchema": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "ErrorBody",
+          "description": "Detailed information about an error response.",
+          "type": "object",
+          "required": [
+            "errorCode",
+            "status",
+            "userMessage"
+          ],
+          "properties": {
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "name": "errors",
+              "required": false
+            },
+            "errorCode": {
+              "description": "A code unique to this error.",
+              "type": "string",
+              "name": "errorCode",
+              "required": false
+            },
+            "status": {
+              "description": "The HTTP status code for this message (400, 401, 403, 404, 500, etc.)",
+              "type": "integer",
+              "name": "status",
+              "required": false
+            },
+            "correlationId": {
+              "description": "The correlation Id or context Id for this message. If left blank the Public API will look at the HTTP response header 'ININ-Correlation-Id' instead.",
+              "type": "string",
+              "name": "correlationId",
+              "required": false
+            },
+            "entityId": {
+              "description": "The ID of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityId",
+              "required": false
+            },
+            "entityName": {
+              "description": "The name of the entity this error refers to. Only used in BackendErrorBody instances within the errors array.",
+              "type": "string",
+              "name": "entityName",
+              "required": false
+            },
+            "userMessage": {
+              "description": "A customer friendly message. This should be a complete sentence, use proper grammar and only include information useful to a customer. This is not a dev message and should not include things like Org Id",
+              "type": "string",
+              "name": "userMessage",
+              "required": false
+            },
+            "userParamsMessage": {
+              "description": "This is the same as message except it uses template fields for variable replacement. For instance: 'User {username} was not found'",
+              "type": "string",
+              "name": "userParamsMessage",
+              "required": false
+            },
+            "userParams.key": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Key name of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.key",
+              "required": false
+            },
+            "userParams.value": {
+              "description": "Used in conjunction with userParamsMessage. These are the template parameters. For instance: UserParam.key = 'username', UserParam.value = 'john.doe'",
+              "type": "array",
+              "items": {
+                "description": "Value of userParam  pair.",
+                "type": "string"
+              },
+              "name": "userParams.value",
+              "required": false
+            },
+            "details.errorCode": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.errorCode",
+              "required": false
+            },
+            "details.fieldName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.fieldName",
+              "required": false
+            },
+            "details.entityId": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityId",
+              "required": false
+            },
+            "details.entityName": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "name": "details.entityName",
+              "required": false
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ]
+  },
+  "supportedLanguages": [
+    "en-AU"
+  ],
+  "manifest": {
+    "dataAction": [
+      {
+        "name": "Get Available Agent Counts",
+        "id": "custom_-_936d5785-c9da-40b5-b6fa-bca0f58f3750",
+        "context": [
+          {
+            "actionName": "Call Data Action",
+            "id": "97b03915-1ed0-4c42-8860-f21336d88b78",
+            "name": "Call Data Action"
+          }
+        ]
+      }
+    ],
+    "queue": [
+      {
+        "name": "AUMainFirstResponse_Q",
+        "id": "765e7312-de96-45ba-a815-22c16e4daf10",
+        "context": [
+          {
+            "actionName": "Transfer to ACD",
+            "id": "49722a23-a504-4f49-b0a8-40eebf674ae6",
+            "name": "Transfer to ACD"
+          }
+        ]
+      },
+      {
+        "name": "AURecruitment_Q",
+        "id": "65462fd6-67d8-4439-9cb6-337c98aa585f",
+        "context": [
+          {
+            "actionName": "Transfer to ACD",
+            "id": "34087e18-4833-43e5-8fb9-48fd13d1dd0c",
+            "name": "Transfer to ACD"
+          },
+          {
+            "actionName": "Transfer to ACD",
+            "id": "981cb669-343a-495b-be1d-a3bc03d66a2e",
+            "name": "Transfer to AU Recruitment"
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "name": "Talent on Break - transfer to voice mail",
+        "id": "1f84cb63-e167-4def-a564-69b0656eb2f2",
+        "context": [
+          {
+            "actionName": "Evaluate Schedule",
+            "id": "81aa180e-e65a-42c6-8a1c-e0c1470bdb50",
+            "name": "Evaluate Schedule"
+          }
+        ]
+      }
+    ],
+    "user": [
+      {
+        "name": "Talent",
+        "id": "771b05f9-f317-4acd-a87c-0907d9cdcd04",
+        "context": [
+          {
+            "actionName": "Transfer to Voicemail",
+            "id": "618cd05d-672a-427a-8d04-11e73809861b",
+            "name": "Transfer to Voicemail"
+          }
+        ]
+      }
+    ],
+    "ttsEngine": [
+      {
+        "name": "Genesys TTS",
+        "id": "genesys",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "ttsVoice": [
+      {
+        "name": "Kandyce",
+        "id": "genesys/Kandyce",
+        "context": [
+          {
+            "id": "en-AU-tts"
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "id": "en-AU"
+      }
+    ],
+    "userPrompt": [
+      {
+        "context": [
+          {
+            "id": "12db54d8-122a-4afb-8277-ecc1b7d22f6e"
+          }
+        ],
+        "id": "e612ae43-517d-49ad-872d-f054674831d3",
+        "name": "PeninsulaTA"
+      },
+      {
+        "context": [
+          {
+            "actionName": "Menu",
+            "id": "2aaca78c-c55d-436b-b145-656feacc51b7",
+            "name": "Main Menu"
+          }
+        ],
+        "id": "e93547cf-69b4-4c88-938f-e2cfeb0e5ddb",
+        "name": "AUTalentWelcome_final"
+      }
+    ],
+    "systemPrompt": []
+  },
+  "type": "inboundcall",
+  "isSecure": false,
+  "debugSettings": {},
+  "disableAsr": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "true",
+        "type": "bln"
+      }
+    },
+    "text": "true",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "disableAsrCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "errorHandling": {
+    "audio": {
+      "bargeInExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "true",
+            "type": "bln"
+          }
+        },
+        "text": "true",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "flushExpression": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2,
+        "outOfService": true
+      },
+      "defaultAudio": {
+        "config": {
+          "AudioPlaybackOptions": {
+            "pos": 1,
+            "text": "AudioPlaybackOptions(ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\"), true)",
+            "operands": [
+              {
+                "ToAudioTTS": {
+                  "pos": 22,
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 33,
+                        "text": "Sorry, an error occurred. Please try your call again.",
+                        "type": "str"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              {
+                "lit": {
+                  "pos": 91,
+                  "text": "true",
+                  "type": "bln"
+                }
+              }
+            ],
+            "type": "aud"
+          }
+        },
+        "text": "AudioPlaybackOptions(ToAudioTTS(\"Sorry, an error occurred. Please try your call again.\"), true)",
+        "type": "aud",
+        "uiMetaData": {
+          "sequenceItems": [
+            {
+              "type": 0,
+              "parameter": "Sorry, an error occurred. Please try your call again.",
+              "error": ""
+            }
+          ],
+          "customExpressionMode": false,
+          "optional": true
+        },
+        "metaData": {}
+      },
+      "cases": []
+    },
+    "queue": {
+      "config": {
+        "emp": {
+          "pos": 1,
+          "text": "",
+          "type": "que"
+        }
+      },
+      "text": "",
+      "type": "que",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "handlingType": "Disconnect"
+  },
+  "initialPrompts": {
+    "bargeInExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "false",
+          "type": "bln"
+        }
+      },
+      "text": "false",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2
+    },
+    "flushExpression": {
+      "config": {
+        "lit": {
+          "pos": 1,
+          "text": "false",
+          "type": "bln"
+        }
+      },
+      "text": "false",
+      "type": "bln",
+      "uiMetaData": {
+        "mode": 1
+      },
+      "metaData": {},
+      "version": 2,
+      "outOfService": true
+    },
+    "defaultAudio": {
+      "config": {
+        "AudioPlaybackOptions": {
+          "pos": 1,
+          "text": "AudioPlaybackOptions(ToAudio(Prompt.PeninsulaTA), false)",
+          "operands": [
+            {
+              "ToAudio": {
+                "pos": 22,
+                "operands": [
+                  {
+                    "ref": {
+                      "pos": 30,
+                      "text": "Prompt.PeninsulaTA",
+                      "type": "pmt",
+                      "val": "e612ae43-517d-49ad-872d-f054674831d3"
+                    }
+                  }
+                ],
+                "type": "aud"
+              }
+            },
+            {
+              "lit": {
+                "pos": 51,
+                "text": "false",
+                "type": "bln"
+              }
+            }
+          ],
+          "type": "aud"
+        }
+      },
+      "text": "AudioPlaybackOptions(ToAudio(Prompt.PeninsulaTA), false)",
+      "type": "aud",
+      "uiMetaData": {
+        "sequenceItems": [
+          {
+            "type": 1,
+            "parameter": "e612ae43-517d-49ad-872d-f054674831d3",
+            "isSystem": false,
+            "name": "Prompt.PeninsulaTA",
+            "expressionName": "Prompt.PeninsulaTA",
+            "error": ""
+          }
+        ],
+        "customExpressionMode": false,
+        "optional": true
+      },
+      "metaData": {
+        "references": [
+          {
+            "id": "e612ae43-517d-49ad-872d-f054674831d3",
+            "type": "pmt",
+            "isSysRef": false,
+            "name": "Prompt.PeninsulaTA"
+          }
+        ]
+      }
+    },
+    "cases": []
+  },
+  "speechRecCompanyDirectory": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "speechRecEngine": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "",
+        "type": "str"
+      }
+    },
+    "text": "",
+    "type": "str",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {}
+  },
+  "suppressRecording": {
+    "config": {
+      "lit": {
+        "pos": 1,
+        "text": "false",
+        "type": "bln"
+      }
+    },
+    "text": "false",
+    "type": "bln",
+    "uiMetaData": {
+      "mode": 1
+    },
+    "metaData": {},
+    "version": 2
+  },
+  "customDefinitions": {
+    "dataTypeDefinitions": []
+  },
+  "defaultSettings": {
+    "PlayAudioOnSilenceAction": {
+      "allowedRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "5",
+            "type": "int"
+          }
+        },
+        "text": "5",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DetectSilenceAction": {
+      "silenceDuration": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "timeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M40S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M40S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DataAction": {
+      "processingPrompt": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "pmt"
+          }
+        },
+        "text": "",
+        "type": "pmt",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "CollectInputAction": {
+      "interDigitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "noEntryTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "DialExtensionAction": {
+      "digitTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferUserAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferExternalAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferGroupAction": {
+      "connTimeout": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "TransferFlowSecureAction": {
+      "connTimeout": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M15S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M15S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "Menu": {
+      "promptRepeatCount": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "0",
+            "type": "int"
+          }
+        },
+        "text": "0",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S100F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S100F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "extensionDialingDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "true",
+            "type": "bln"
+          }
+        },
+        "text": "true",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    },
+    "SpeechRec": {
+      "speechRecMinConfidence": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "50",
+            "type": "int"
+          }
+        },
+        "text": "50",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S500F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S500F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M20S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M20S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  },
+  "flowMetaData": {
+    "flowDocumentVersion": "1.0",
+    "minimumServerVersion": "1.0",
+    "ttsDataVersion": "1.0"
+  },
+  "flowSequenceItemList": [
+    {
+      "startAction": "81aa180e-e65a-42c6-8a1c-e0c1470bdb50",
+      "trackingId": 15,
+      "id": "3ede7f79-2d0d-4a77-8670-6506e8763f1b",
+      "name": "New Task 1",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "Task",
+      "paths": [
+        {
+          "label": "Default",
+          "outputId": "__DEFAULT__"
+        }
+      ],
+      "actionList": [
+        {
+          "trackingId": 16,
+          "id": "96be55c5-910a-431a-b2af-708f2a17fbce",
+          "name": "Disconnect",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DisconnectAction"
+        },
+        {
+          "actionName": "Get Available Agent Counts",
+          "actionId": "custom_-_936d5785-c9da-40b5-b6fa-bca0f58f3750",
+          "category": {
+            "id": "Genesys Cloud Data Actions",
+            "name": "Genesys Cloud Data Actions"
+          },
+          "useSuggestedTimeout": true,
+          "nextAction": "ce2ef7f1-1a57-498c-9a07-20f14887a4c9",
+          "trackingId": 17,
+          "id": "97b03915-1ed0-4c42-8860-f21336d88b78",
+          "name": "Call Data Action",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DataAction",
+          "errorBindings": [],
+          "processingPrompt": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "pmt"
+              }
+            },
+            "text": "",
+            "type": "pmt",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "inputs": [
+            {
+              "name": "queueId",
+              "value": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "65462fd6-67d8-4439-9cb6-337c98aa585f",
+                    "type": "str"
+                  }
+                },
+                "text": "65462fd6-67d8-4439-9cb6-337c98aa585f",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "counts",
+              "value": {
+                "config": {
+                  "ref": {
+                    "pos": 1,
+                    "text": "Task.Count",
+                    "type": "int_coll",
+                    "val": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8"
+                  }
+                },
+                "text": "Task.Count",
+                "type": "int_coll",
+                "uiMetaData": {
+                  "mode": 2
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8",
+                      "type": "int_coll",
+                      "isSysRef": false,
+                      "name": "Task.Count"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            },
+            {
+              "name": "statuses",
+              "value": {
+                "config": {
+                  "ref": {
+                    "pos": 1,
+                    "text": "Task.Status",
+                    "type": "str_coll",
+                    "val": "0b742915-b749-470d-8f3d-b0bf6027fd1d"
+                  }
+                },
+                "text": "Task.Status",
+                "type": "str_coll",
+                "uiMetaData": {
+                  "mode": 2
+                },
+                "metaData": {
+                  "references": [
+                    {
+                      "id": "0b742915-b749-470d-8f3d-b0bf6027fd1d",
+                      "type": "str_coll",
+                      "isSysRef": false,
+                      "name": "Task.Status"
+                    }
+                  ]
+                },
+                "version": 2
+              }
+            }
+          ],
+          "timeout": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "P0D0H1M0S0F",
+                "type": "dur"
+              }
+            },
+            "text": "P0D0H1M0S0F",
+            "type": "dur",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "paths": [
+            {
+              "disabled": false,
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": false,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": false,
+              "label": "Timeout",
+              "outputId": "__TIMEOUT__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "nextAction": "96be55c5-910a-431a-b2af-708f2a17fbce",
+          "trackingId": 18,
+          "id": "ce2ef7f1-1a57-498c-9a07-20f14887a4c9",
+          "name": "Decision",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DecisionAction",
+          "expression": {
+            "config": {
+              "If": {
+                "pos": 1,
+                "text": "If(IsSet(ToString(Task.Count)) And IsSet(\"0\"), Contains(ToString(Task.Count), \"0\", true), false)",
+                "operands": [
+                  {
+                    "And": {
+                      "pos": 32,
+                      "operands": [
+                        {
+                          "IsSet": {
+                            "pos": 4,
+                            "operands": [
+                              {
+                                "ToString": {
+                                  "pos": 10,
+                                  "operands": [
+                                    {
+                                      "ref": {
+                                        "pos": 19,
+                                        "text": "Task.Count",
+                                        "type": "int_coll",
+                                        "val": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8"
+                                      }
+                                    }
+                                  ],
+                                  "type": "str"
+                                }
+                              }
+                            ],
+                            "type": "bln"
+                          }
+                        },
+                        {
+                          "IsSet": {
+                            "pos": 36,
+                            "operands": [
+                              {
+                                "lit": {
+                                  "pos": 42,
+                                  "text": "0",
+                                  "type": "str"
+                                }
+                              }
+                            ],
+                            "type": "bln"
+                          }
+                        }
+                      ],
+                      "type": "bln"
+                    }
+                  },
+                  {
+                    "Contains": {
+                      "pos": 48,
+                      "operands": [
+                        {
+                          "ToString": {
+                            "pos": 57,
+                            "operands": [
+                              {
+                                "ref": {
+                                  "pos": 66,
+                                  "text": "Task.Count",
+                                  "type": "int_coll",
+                                  "val": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8"
+                                }
+                              }
+                            ],
+                            "type": "str"
+                          }
+                        },
+                        {
+                          "lit": {
+                            "pos": 79,
+                            "text": "0",
+                            "type": "str"
+                          }
+                        },
+                        {
+                          "lit": {
+                            "pos": 84,
+                            "text": "true",
+                            "type": "bln"
+                          }
+                        }
+                      ],
+                      "type": "bln"
+                    }
+                  },
+                  {
+                    "lit": {
+                      "pos": 91,
+                      "text": "false",
+                      "type": "bln"
+                    }
+                  }
+                ],
+                "type": "bln"
+              }
+            },
+            "text": "If(IsSet(ToString(Task.Count)) And IsSet(\"0\"), Contains(ToString(Task.Count), \"0\", true), false)",
+            "type": "bln",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_BOOLEAN__",
+                "id": "89105605-2bf7-4d35-a5f1-a8e81e64ad93",
+                "version": 1,
+                "builderParts": [
+                  {
+                    "builderPartDefId": "__BUILDER_PART_STRING_CONTAINS__",
+                    "id": "d692137e-8796-4738-bf1b-515b93cab297",
+                    "outOfService": false,
+                    "version": 1,
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "ToString": {
+                            "pos": 1,
+                            "text": "ToString(Task.Count)",
+                            "operands": [
+                              {
+                                "ref": {
+                                  "pos": 1,
+                                  "text": "Task.Count",
+                                  "type": "int_coll",
+                                  "val": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8"
+                                }
+                              }
+                            ],
+                            "type": "str"
+                          }
+                        },
+                        "text": "Task.Count",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 0
+                        },
+                        "metaData": {
+                          "references": [
+                            {
+                              "id": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8",
+                              "type": "int_coll",
+                              "isSysRef": false,
+                              "name": "Task.Count"
+                            }
+                          ]
+                        },
+                        "version": 2
+                      },
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "0",
+                            "type": "str"
+                          }
+                        },
+                        "text": "0",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      },
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "true",
+                            "type": "bln"
+                          }
+                        },
+                        "text": "true",
+                        "type": "bln",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "metaData": {
+              "references": [
+                {
+                  "id": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8",
+                  "type": "int_coll",
+                  "isSysRef": false,
+                  "name": "Task.Count"
+                }
+              ]
+            },
+            "version": 2
+          },
+          "paths": [
+            {
+              "nextActionId": "2e7191f3-22e1-43c6-a6d1-333d5f75964d",
+              "disabled": false,
+              "label": "Yes",
+              "outputId": "__YES__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "nextActionId": "34087e18-4833-43e5-8fb9-48fd13d1dd0c",
+              "disabled": false,
+              "label": "No",
+              "outputId": "__NO__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "useDefaultHandling": true,
+          "trackingId": 19,
+          "id": "49722a23-a504-4f49-b0a8-40eebf674ae6",
+          "name": "Transfer to ACD",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "TransferPureMatchAction",
+          "appendSkills": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "false",
+                "type": "bln"
+              }
+            },
+            "text": "false",
+            "type": "bln",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "directAgent": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "usr"
+              }
+            },
+            "text": "",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "languageSkill": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "lac"
+              }
+            },
+            "text": "",
+            "type": "lac",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "preferredAgents": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "cpx_agent_score_pair_coll"
+              }
+            },
+            "text": "",
+            "type": "cpx_agent_score_pair_coll",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "priority": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "0",
+                "type": "int"
+              }
+            },
+            "text": "0",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "queues": [
+            {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "AUMainFirstResponse_Q",
+                  "type": "que",
+                  "val": "765e7312-de96-45ba-a815-22c16e4daf10"
+                }
+              },
+              "text": "AUMainFirstResponse_Q",
+              "type": "que",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            }
+          ],
+          "skills": [],
+          "errorBindings": [
+            {
+              "name": "errorType",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "errorMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "preTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "",
+                    "error": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "preTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "id": "889f4af4-ada0-4b04-aa2e-79e6a905f731",
+                "version": 1,
+                "builderParts": [
+                  {
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "id": "7c53c6f5-3b27-43c6-84d7-32596b38199a",
+                    "outOfService": false,
+                    "version": 1,
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "failureTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "",
+                    "error": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "failureTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "id": "ab961e2d-d25d-42ab-a905-6c638efb67a5",
+                "version": 1,
+                "builderParts": [
+                  {
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "id": "669729a9-fb1a-42ca-bcf2-39485dad3b05",
+                    "outOfService": false,
+                    "version": 1,
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "paths": [
+            {
+              "disabled": false,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "nextAction": "49722a23-a504-4f49-b0a8-40eebf674ae6",
+          "trackingId": 20,
+          "id": "2e7191f3-22e1-43c6-a6d1-333d5f75964d",
+          "name": "Set Whisper Audio",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "SetWhisperAudio",
+          "whisperAudio": {
+            "uiMetaData": {
+              "noValueMode": false
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "ToAudioTTS": {
+                  "pos": 1,
+                  "text": "ToAudioTTS(\"Talent acquisition - Call\")",
+                  "operands": [
+                    {
+                      "lit": {
+                        "pos": 12,
+                        "text": "Talent acquisition - Call",
+                        "type": "str"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "ToAudioTTS(\"Talent acquisition - Call\")",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "Talent acquisition - Call",
+                    "error": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "paths": [
+            {
+              "disabled": false,
+              "label": "Success",
+              "outputId": "__SUCCESS__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "disabled": false,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "useDefaultHandling": true,
+          "trackingId": 21,
+          "id": "34087e18-4833-43e5-8fb9-48fd13d1dd0c",
+          "name": "Transfer to ACD",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "TransferPureMatchAction",
+          "appendSkills": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "false",
+                "type": "bln"
+              }
+            },
+            "text": "false",
+            "type": "bln",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "directAgent": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "usr"
+              }
+            },
+            "text": "",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "languageSkill": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "lac"
+              }
+            },
+            "text": "",
+            "type": "lac",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "preferredAgents": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "cpx_agent_score_pair_coll"
+              }
+            },
+            "text": "",
+            "type": "cpx_agent_score_pair_coll",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "priority": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "0",
+                "type": "int"
+              }
+            },
+            "text": "0",
+            "type": "int",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "queues": [
+            {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "AURecruitment_Q",
+                  "type": "que",
+                  "val": "65462fd6-67d8-4439-9cb6-337c98aa585f"
+                }
+              },
+              "text": "AURecruitment_Q",
+              "type": "que",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            }
+          ],
+          "skills": [],
+          "errorBindings": [
+            {
+              "name": "errorType",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "errorMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "preTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "",
+                    "error": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "preTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "id": "f4c6ac88-d67f-4a63-9574-e95501440330",
+                "version": 1,
+                "builderParts": [
+                  {
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "id": "7797cc90-a44c-4705-a92e-d8b6ac96feba",
+                    "outOfService": false,
+                    "version": 1,
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "failureTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "parameter": "",
+                    "error": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "failureTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "id": "3b7d8292-ddc4-493e-b4f0-b4b7641f8966",
+                "version": 1,
+                "builderParts": [
+                  {
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "id": "74932ee5-2ec7-477a-8605-d8c71a96465b",
+                    "outOfService": false,
+                    "version": 1,
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "paths": [
+            {
+              "disabled": false,
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "evaluateEmergencyGroup": false,
+          "evaluateNow": true,
+          "nextAction": "97b03915-1ed0-4c42-8860-f21336d88b78",
+          "trackingId": 22,
+          "id": "81aa180e-e65a-42c6-8a1c-e0c1470bdb50",
+          "name": "Evaluate Schedule",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "EvaluateScheduleAction",
+          "timeZone": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Australia/Sydney",
+                "type": "str"
+              }
+            },
+            "text": "Australia/Sydney",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "schedule": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Talent on Break - transfer to voice mail",
+                "type": "sch",
+                "val": "1f84cb63-e167-4def-a564-69b0656eb2f2"
+              }
+            },
+            "text": "Talent on Break - transfer to voice mail",
+            "type": "sch",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "evaluationDateTime": {
+            "text": "",
+            "type": "dtm",
+            "uiMetaData": {
+              "mode": 0
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "emergencyGroup": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "",
+                "type": "emg"
+              }
+            },
+            "text": "",
+            "type": "emg",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "paths": [
+            {
+              "nextActionId": "618cd05d-672a-427a-8d04-11e73809861b",
+              "label": "Active",
+              "outputId": "__ACTIVE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            },
+            {
+              "label": "Inactive",
+              "outputId": "__INACTIVE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "trackingId": 25,
+          "id": "618cd05d-672a-427a-8d04-11e73809861b",
+          "name": "Transfer to Voicemail",
+          "uiMetaData": {
+            "collapsed": false,
+            "openedBefore": true
+          },
+          "__type": "TransferVoicemailAction",
+          "transferTargetType": "user",
+          "transferTarget": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "Talent",
+                "type": "usr",
+                "username": "careers@peninsula-au.com",
+                "val": "771b05f9-f317-4acd-a87c-0907d9cdcd04"
+              }
+            },
+            "text": "Talent",
+            "type": "usr",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2
+          },
+          "transferTargetGroup": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "",
+                "type": "grp"
+              }
+            },
+            "text": "",
+            "type": "grp",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "transferTargetQueue": {
+            "config": {
+              "lit": {
+                "pos": 1,
+                "text": "",
+                "type": "que"
+              }
+            },
+            "text": "",
+            "type": "que",
+            "uiMetaData": {
+              "mode": 1
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "calleeName": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str"
+              }
+            },
+            "text": "",
+            "type": "str",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2,
+            "outOfService": true
+          },
+          "callbackNumbers": [
+            {
+              "config": {
+                "ToPhoneNumber": {
+                  "pos": 1,
+                  "text": "ToPhoneNumber(Call.Ani)",
+                  "operands": [
+                    {
+                      "sysref": {
+                        "pos": 15,
+                        "text": "Call.Ani",
+                        "type": "str",
+                        "val": "__CALL_ANI__"
+                      }
+                    }
+                  ],
+                  "type": "phn"
+                }
+              },
+              "text": "ToPhoneNumber(Call.Ani)",
+              "type": "phn",
+              "uiMetaData": {
+                "mode": 0
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "__CALL_ANI__",
+                    "type": "str",
+                    "isSysRef": true,
+                    "name": "Call.Ani"
+                  }
+                ]
+              },
+              "version": 2,
+              "outOfService": true
+            }
+          ],
+          "voicemailGreeting": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "AudioPlaybackOptions": {
+                  "pos": 1,
+                  "text": "AudioPlaybackOptions(ToAudio(PromptSystem.voicemail_greeting), true)",
+                  "operands": [
+                    {
+                      "ToAudio": {
+                        "pos": 22,
+                        "operands": [
+                          {
+                            "sysref": {
+                              "pos": 30,
+                              "text": "PromptSystem.voicemail_greeting",
+                              "type": "pmt",
+                              "val": "__voicemail_greeting__"
+                            }
+                          }
+                        ],
+                        "type": "aud"
+                      }
+                    },
+                    {
+                      "lit": {
+                        "pos": 64,
+                        "text": "true",
+                        "type": "bln"
+                      }
+                    }
+                  ],
+                  "type": "aud"
+                }
+              },
+              "text": "AudioPlaybackOptions(ToAudio(PromptSystem.voicemail_greeting), true)",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 1,
+                    "error": "",
+                    "parameter": "__voicemail_greeting__",
+                    "isSystem": true,
+                    "name": "PromptSystem.voicemail_greeting",
+                    "expressionName": "PromptSystem.voicemail_greeting"
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {
+                "references": [
+                  {
+                    "id": "__voicemail_greeting__",
+                    "type": "pmt",
+                    "isSysRef": true,
+                    "name": "PromptSystem.voicemail_greeting"
+                  }
+                ]
+              },
+              "outOfService": true
+            },
+            "cases": []
+          },
+          "inputs": [],
+          "errorBindings": [
+            {
+              "name": "errorType",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            },
+            {
+              "name": "errorMessage",
+              "value": {
+                "config": {
+                  "emp": {
+                    "pos": 1,
+                    "text": "",
+                    "type": "str"
+                  }
+                },
+                "text": "",
+                "type": "str",
+                "uiMetaData": {
+                  "mode": 3
+                },
+                "metaData": {},
+                "version": 2
+              }
+            }
+          ],
+          "preTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "error": "",
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "preTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "version": 1,
+                "id": "33493b6e-09aa-4163-ae88-e963ffd2a3aa",
+                "builderParts": [
+                  {
+                    "version": 1,
+                    "id": "799b90b4-ddbf-443e-b980-ea9c272870f1",
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ],
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "outOfService": false
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "failureTransferAudio": {
+            "bargeInExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "true",
+                  "type": "bln"
+                }
+              },
+              "text": "true",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "flushExpression": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "defaultAudio": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "aud"
+                }
+              },
+              "text": "",
+              "type": "aud",
+              "uiMetaData": {
+                "sequenceItems": [
+                  {
+                    "type": 0,
+                    "error": "",
+                    "parameter": ""
+                  }
+                ],
+                "customExpressionMode": false
+              },
+              "metaData": {}
+            },
+            "cases": []
+          },
+          "failureTransferCommunication": {
+            "text": "MakeCommunication(\n  \"\")",
+            "type": "com",
+            "uiMetaData": {
+              "mode": 4,
+              "builder": {
+                "builderDefId": "__BUILDER_PARTS_GENERIC_COMMUNICATION__",
+                "version": 1,
+                "id": "c640b9ab-af1a-4d1a-8d9e-522542e84200",
+                "builderParts": [
+                  {
+                    "version": 1,
+                    "id": "65cac103-8720-418e-bbc9-ad6948c851b5",
+                    "builderPartExpressions": [
+                      {
+                        "config": {
+                          "lit": {
+                            "pos": 1,
+                            "text": "",
+                            "type": "str"
+                          }
+                        },
+                        "text": "",
+                        "type": "str",
+                        "uiMetaData": {
+                          "mode": 1
+                        },
+                        "metaData": {},
+                        "version": 2
+                      }
+                    ],
+                    "builderPartDefId": "__BUILDER_PART_COMMUNICATION_TEXT__",
+                    "outOfService": false
+                  }
+                ]
+              }
+            },
+            "version": 2,
+            "outOfService": true
+          },
+          "paths": [
+            {
+              "nextActionId": "496e8757-1a3a-4df3-a0f0-e9577e7e306d",
+              "label": "Failure",
+              "outputId": "__FAILURE__",
+              "uiMetaData": {
+                "collapsed": false
+              }
+            }
+          ]
+        },
+        {
+          "trackingId": 26,
+          "id": "496e8757-1a3a-4df3-a0f0-e9577e7e306d",
+          "name": "Disconnect",
+          "uiMetaData": {
+            "collapsed": false
+          },
+          "__type": "DisconnectAction"
+        }
+      ],
+      "variables": [
+        {
+          "id": "7eda75fa-4a7a-4c93-a6f4-aa42b238a4c8",
+          "isCollection": true,
+          "isInternal": false,
+          "isOutput": false,
+          "isInput": false,
+          "isSecure": false,
+          "version": "1.0",
+          "__type": "IntegerVariable",
+          "name": "Task.Count",
+          "initialValue": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "int_coll"
+              }
+            },
+            "text": "",
+            "type": "int_coll",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        },
+        {
+          "id": "0b742915-b749-470d-8f3d-b0bf6027fd1d",
+          "isCollection": true,
+          "isInternal": false,
+          "isOutput": false,
+          "isInput": false,
+          "isSecure": false,
+          "version": "1.0",
+          "__type": "StringVariable",
+          "name": "Task.Status",
+          "initialValue": {
+            "config": {
+              "emp": {
+                "pos": 1,
+                "text": "",
+                "type": "str_coll"
+              }
+            },
+            "text": "",
+            "type": "str_coll",
+            "uiMetaData": {
+              "mode": 3
+            },
+            "metaData": {},
+            "version": 2
+          }
+        }
+      ]
+    },
+    {
+      "trackingId": 10,
+      "id": "2aaca78c-c55d-436b-b145-656feacc51b7",
+      "name": "Main Menu",
+      "uiMetaData": {
+        "collapsed": false
+      },
+      "__type": "Menu",
+      "extensionDialingDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M1S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M1S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1,
+          "isOverride": true
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "menuChoiceList": [
+        {
+          "globalDtmf": true,
+          "globalSpeech": false,
+          "speechRecTerms": {
+            "en-AU": []
+          },
+          "id": "84aaf872-0ed6-4f30-904a-d5fbe6021d90",
+          "name": "Transfer to AU Recruitment",
+          "action": {
+            "inQueueFlowId": "037f2416-0bfc-4172-afe1-18a8989cae7e",
+            "inQueueFlowName": "Default In-Queue Flow",
+            "useDefaultHandling": true,
+            "trackingId": 12,
+            "id": "981cb669-343a-495b-be1d-a3bc03d66a2e",
+            "name": "Transfer to AU Recruitment",
+            "uiMetaData": {
+              "collapsed": false
+            },
+            "__type": "TransferPureMatchAction",
+            "appendSkills": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "false",
+                  "type": "bln"
+                }
+              },
+              "text": "false",
+              "type": "bln",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2,
+              "outOfService": true
+            },
+            "directAgent": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "usr"
+                }
+              },
+              "text": "",
+              "type": "usr",
+              "uiMetaData": {
+                "mode": 3
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "languageSkill": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "lac"
+                }
+              },
+              "text": "",
+              "type": "lac",
+              "uiMetaData": {
+                "mode": 3
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "preferredAgents": {
+              "config": {
+                "emp": {
+                  "pos": 1,
+                  "text": "",
+                  "type": "cpx_agent_score_pair_coll"
+                }
+              },
+              "text": "",
+              "type": "cpx_agent_score_pair_coll",
+              "uiMetaData": {
+                "mode": 3
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "priority": {
+              "config": {
+                "lit": {
+                  "pos": 1,
+                  "text": "0",
+                  "type": "int"
+                }
+              },
+              "text": "0",
+              "type": "int",
+              "uiMetaData": {
+                "mode": 1
+              },
+              "metaData": {},
+              "version": 2
+            },
+            "queues": [
+              {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "AURecruitment_Q",
+                    "type": "que",
+                    "val": "65462fd6-67d8-4439-9cb6-337c98aa585f"
+                  }
+                },
+                "text": "AURecruitment_Q",
+                "type": "que",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              }
+            ],
+            "skills": [],
+            "errorBindings": [
+              {
+                "name": "errorType",
+                "value": {
+                  "config": {
+                    "emp": {
+                      "pos": 1,
+                      "text": "",
+                      "type": "str"
+                    }
+                  },
+                  "text": "",
+                  "type": "str",
+                  "uiMetaData": {
+                    "mode": 3
+                  },
+                  "metaData": {},
+                  "version": 2
+                }
+              },
+              {
+                "name": "errorMessage",
+                "value": {
+                  "config": {
+                    "emp": {
+                      "pos": 1,
+                      "text": "",
+                      "type": "str"
+                    }
+                  },
+                  "text": "",
+                  "type": "str",
+                  "uiMetaData": {
+                    "mode": 3
+                  },
+                  "metaData": {},
+                  "version": 2
+                }
+              }
+            ],
+            "preTransferAudio": {
+              "bargeInExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                },
+                "text": "true",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "flushExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "false",
+                    "type": "bln"
+                  }
+                },
+                "text": "false",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2,
+                "outOfService": true
+              },
+              "defaultAudio": {
+                "config": {
+                  "AudioPlaybackOptions": {
+                    "pos": 1,
+                    "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                    "operands": [
+                      {
+                        "ToAudioBlank": {
+                          "pos": 22,
+                          "operands": [
+                            {
+                              "lit": {
+                                "pos": 35,
+                                "text": "100",
+                                "type": "int"
+                              }
+                            }
+                          ],
+                          "type": "aud"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 41,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": [
+                    {
+                      "parameter": 100,
+                      "type": 4,
+                      "error": ""
+                    }
+                  ],
+                  "customExpressionMode": false
+                },
+                "metaData": {}
+              },
+              "cases": []
+            },
+            "preTransferCommunication": {
+              "text": "",
+              "type": "com",
+              "uiMetaData": {
+                "mode": 0
+              },
+              "version": 2,
+              "outOfService": true
+            },
+            "failureTransferAudio": {
+              "bargeInExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                },
+                "text": "true",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2
+              },
+              "flushExpression": {
+                "config": {
+                  "lit": {
+                    "pos": 1,
+                    "text": "false",
+                    "type": "bln"
+                  }
+                },
+                "text": "false",
+                "type": "bln",
+                "uiMetaData": {
+                  "mode": 1
+                },
+                "metaData": {},
+                "version": 2,
+                "outOfService": true
+              },
+              "defaultAudio": {
+                "config": {
+                  "AudioPlaybackOptions": {
+                    "pos": 1,
+                    "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                    "operands": [
+                      {
+                        "ToAudioBlank": {
+                          "pos": 22,
+                          "operands": [
+                            {
+                              "lit": {
+                                "pos": 35,
+                                "text": "100",
+                                "type": "int"
+                              }
+                            }
+                          ],
+                          "type": "aud"
+                        }
+                      },
+                      {
+                        "lit": {
+                          "pos": 41,
+                          "text": "true",
+                          "type": "bln"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                "text": "AudioPlaybackOptions(ToAudioBlank(100), true)",
+                "type": "aud",
+                "uiMetaData": {
+                  "sequenceItems": [
+                    {
+                      "parameter": 100,
+                      "type": 4,
+                      "error": ""
+                    }
+                  ],
+                  "customExpressionMode": false
+                },
+                "metaData": {}
+              },
+              "cases": []
+            },
+            "failureTransferCommunication": {
+              "text": "",
+              "type": "com",
+              "uiMetaData": {
+                "mode": 0
+              },
+              "version": 2,
+              "outOfService": true
+            },
+            "paths": [
+              {
+                "label": "Failure",
+                "outputId": "__FAILURE__"
+              }
+            ]
+          },
+          "digit": 2
+        }
+      ],
+      "promptRepeatCount": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "promptRepeatDelay": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "P0D0H0M0S0F",
+            "type": "dur"
+          }
+        },
+        "text": "P0D0H0M0S0F",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 1,
+          "isOverride": true
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "prompts": {
+        "bargeInExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "true",
+              "type": "bln"
+            }
+          },
+          "text": "true",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2
+        },
+        "flushExpression": {
+          "config": {
+            "lit": {
+              "pos": 1,
+              "text": "false",
+              "type": "bln"
+            }
+          },
+          "text": "false",
+          "type": "bln",
+          "uiMetaData": {
+            "mode": 1
+          },
+          "metaData": {},
+          "version": 2,
+          "outOfService": true
+        },
+        "defaultAudio": {
+          "config": {
+            "AudioPlaybackOptions": {
+              "pos": 1,
+              "text": "AudioPlaybackOptions(ToAudio(Prompt.AUTalentWelcome_final), true)",
+              "operands": [
+                {
+                  "ToAudio": {
+                    "pos": 22,
+                    "operands": [
+                      {
+                        "ref": {
+                          "pos": 30,
+                          "text": "Prompt.AUTalentWelcome_final",
+                          "type": "pmt",
+                          "val": "e93547cf-69b4-4c88-938f-e2cfeb0e5ddb"
+                        }
+                      }
+                    ],
+                    "type": "aud"
+                  }
+                },
+                {
+                  "lit": {
+                    "pos": 61,
+                    "text": "true",
+                    "type": "bln"
+                  }
+                }
+              ],
+              "type": "aud"
+            }
+          },
+          "text": "AudioPlaybackOptions(ToAudio(Prompt.AUTalentWelcome_final), true)",
+          "type": "aud",
+          "uiMetaData": {
+            "sequenceItems": [
+              {
+                "type": 1,
+                "parameter": "e93547cf-69b4-4c88-938f-e2cfeb0e5ddb",
+                "isSystem": false,
+                "name": "Prompt.AUTalentWelcome_final",
+                "expressionName": "Prompt.AUTalentWelcome_final",
+                "error": ""
+              }
+            ],
+            "customExpressionMode": false,
+            "optional": true
+          },
+          "metaData": {
+            "references": [
+              {
+                "id": "e93547cf-69b4-4c88-938f-e2cfeb0e5ddb",
+                "type": "pmt",
+                "isSysRef": false,
+                "name": "Prompt.AUTalentWelcome_final"
+              }
+            ]
+          }
+        },
+        "cases": []
+      },
+      "speechRecMinConfidence": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "int"
+          }
+        },
+        "text": "",
+        "type": "int",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutComplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutIncomplete": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "speechRecTimeoutTotal": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "dur"
+          }
+        },
+        "text": "",
+        "type": "dur",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "useExtensionDialing": {
+        "config": {
+          "lit": {
+            "pos": 1,
+            "text": "false",
+            "type": "bln"
+          }
+        },
+        "text": "false",
+        "type": "bln",
+        "uiMetaData": {
+          "mode": 1,
+          "isOverride": true
+        },
+        "metaData": {},
+        "version": 2
+      }
+    }
+  ],
+  "supportedLanguageOptions": [
+    {
+      "language": "en-AU",
+      "languageSkill": {
+        "config": {
+          "emp": {
+            "pos": 1,
+            "text": "",
+            "type": "lac"
+          }
+        },
+        "text": "",
+        "type": "lac",
+        "uiMetaData": {
+          "mode": 3
+        },
+        "metaData": {},
+        "version": 2
+      },
+      "textToSpeech": {
+        "engine": {
+          "selection": "specific",
+          "name": "Genesys TTS",
+          "id": "genesys"
+        },
+        "voice": {
+          "selection": "specific",
+          "name": "Kandyce",
+          "id": "genesys/Kandyce"
+        }
+      }
+    }
+  ],
+  "variables": [],
+  "versionMetaData": {
+    "inputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow input schema",
+      "description": "Schema defining flow input parameters.  Property names map to flow scoped variables marked as a flow input.  If you do not supply a property value for an input variable, the variable value will be set to the initial value configured on it in the flow at flow startup.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Flow output schema",
+      "description": "Schema defining flow output parameters.  Property names map to flow scoped variables marked as a flow output.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+}
