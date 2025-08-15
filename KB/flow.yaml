@@ -1,0 +1,55 @@
+# Digital Bot Flow (Archy YAML)
+digitalBotFlow:
+  name: "${bot_name}"
+  description: "Answers user questions by surfacing Knowledge articles."
+  division: "Home"
+  defaultLanguage: "en-AU"
+  supportedLanguages:
+    - "en-AU"
+
+  # Minimal NLU config favoring Knowledge
+  nlu:
+    engine: "genesysDialogEngine"
+    knowledgeBehavior:
+      # Bind the Knowledge Base
+      knowledgeBaseId: "${knowledgebase_id}"
+      # Prefer showing the Answer field
+      answerPresentationMode: "answerOnly"  # other modes exist
+
+  variables:
+    - name: Question
+      type: "string"
+
+  states:
+    - name: "Start"
+      initial: true
+      actions:
+        - listen:
+            # Simple free-text capture
+            textInput:
+              variable: "Question"
+              noInput:
+                - say:
+                    text:
+                      - "I didn't catch that. What would you like to know?"
+              noMatch:
+                - say:
+                    text:
+                      - "Sorry—please rephrase your question."
+        # Ask Knowledge to answer the captured question
+        - knowledge:
+            queryVariable: "Question"
+            maxResults: 1
+            onFound:
+              # ${Knowledge.title} and ${Knowledge.answer} are provided by Knowledge surfacing
+              - say:
+                  text:
+                    - "**${Knowledge.title}**\n${Knowledge.answer}"
+              - listen:
+                  quickReplies:
+                    - "Another question"
+                    - "Talk to an agent"
+            onNotFound:
+              - say:
+                  text:
+                    - "I couldn't find a good match. Try a different keyword or ask in another way."
